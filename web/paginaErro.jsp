@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>Pagina de erro </h1>
-        algo deu  errado
+        algo deu  errado volte
     </body>
 </html>
