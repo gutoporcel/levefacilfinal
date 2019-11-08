@@ -1,0 +1,214 @@
+html.ihome {
+	overflow:hidden;
+}
+#loader-overlay {
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:#fff;
+	z-index:9999999999999;
+}
+#loader-overlay img {
+	position:relative;
+	top:50%;
+	left:50%;
+	-webkit-transform:translateX(-50%) translateY(-50%);
+	-moz-transform:translateX(-50%) translateY(-50%);
+	-ms-transform:translateX(-50%) translateY(-50%);
+	-o-transform:translateX(-50%) translateY(-50%);
+	transform:translateX(-50%) translateY(-50%);
+}
+
+/*New*/
+/*Home*/
+.tp-caption.imed-sl1 {
+	z-index: 12;
+}
+.ihome-banner {
+	float:left; 
+	position: relative
+}
+.ihome-banner .banner {
+	margin:0px; 
+	padding:0px;
+}
+.icon-boxes-1 .icon-box-3 span.ibox-right-span {
+	float: right;
+}
+.parallax-out.ihome-parallax {
+	background-color: #f6f6f6; 
+	min-height: 507px; 
+	margin-bottom: 0px;
+}
+.parallax-out.ihome-parallax #second {
+	background-size: contain; 
+	background-image: url('../images/list-background.png'); 
+	background-repeat:repeat repeat;
+}
+.parallax-out.ihome-parallax #second .float-right {
+	background:url('../images/icon-list-back.png') no-repeat 0px 100px;
+}
+.purchase-wrap-blue.ipurchase-wrap {
+	width: 100%;
+}
+.purchase-wrap-blue.ipurchase-wrap span.ipurcahse-strip-text {
+	color:#fff; 
+	font-weight:600
+}
+p.ipurchase-paragraph {
+	padding:0px; 
+	margin:0px;
+}
+h3.ilast-child-acc {
+	border-bottom: 1px solid #e0e1e2;
+}
+.testimonial-wrap.ihome-testi-wrap {
+	background:#f8f8f8
+}
+.cl-warp.icl-wrap {
+	width:100%; 
+	float:left; 
+	height:auto;
+}
+ul.icl-carousel li img {
+	margin-top:10px;
+}
+a.settings_link.showup i {
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	transition: all 0.5s linear; 	
+}
+.foot-widget-title {
+	padding-bottom:5px;
+}
+/*Page Elements*/
+header {
+	background: #fff;
+}
+.bread-crumb-wrap {
+	background: url('../images/bc-back1.jpg') repeat 0px 0px;
+}
+.bread-crumb-wrap.ibc-wrap-1 {
+	background: url('../images/bc-back1.jpg') repeat 0px 0px;
+}
+.bread-crumb-wrap.ibc-wrap-2 {
+	background: url('../images/bc-back2.jpg') repeat 0px 0px;
+}
+.bread-crumb-wrap.ibc-wrap-3 {
+	background: url('../images/bc-back3.jpg') repeat 0px 0px;
+}
+.bread-crumb-wrap.ibc-wrap-4 {
+	background: url('../images/bc-back4.jpg') repeat 0px 0px;
+}
+.bread-crumb-wrap.ibc-wrap-5 {
+	background: url('../images/bc-back5.jpg') repeat 0px 0px;
+}
+.bread-crumb-wrap.ibc-wrap-6 {
+	background: url('../images/bc-back6.jpg') repeat 0px 0px;
+}
+.purchase-strip-blue.ipurchase-text-center {
+	text-align:center; 
+	width:100%; 
+	padding-bottom: 0;
+}
+.purchase-strip-blue.ipurchase-text-center .icon-cart{
+	visibility: visible;
+	-webkit-animation-delay: 0.5s; 
+	-moz-animation-delay: 0.5s; 
+	animation-delay: 0.5s;
+}
+/*Price Table*/
+.ibg-transparent {
+	background: rgba(0,0,0,0);
+}
+span.iprice-span {
+	color:#8c99a9; 
+	font-size:12px; 
+	font-weight:bold; 
+	text-transform:uppercase;
+}
+.price-table.iprice-no-right-border {
+	border-right: none;
+}
+/*Flip Box*/
+.iflip .ifb-flip-box .ifb-front {
+	color:#444444;
+	background:#f7f7f7; 
+	border-style: solid;
+	border-width: 1px; 
+	border-color:#e4e4e4;
+}
+.iflip .ifb-flip-box .ifb-front p {
+	color:#535353;
+}
+.iflip .ifb-flip-box .ifb-back h3 {
+	color:#fff; 
+	margin-top:25px
+}
+.iflip .ifb-flip-box .ifb-back p {
+	color:#fff; 
+}
+/*Department*/
+.iform-button {
+	width: 40%;
+}
+.iform-button-60 {
+	width: 60%;
+}
+.idept-call span.ifont-normal {
+	color:#8c99a9; 
+	font-weight:normal;
+}
+/*Gallery Carousel*/
+span.icarousel-inn {
+	font-weight:normal; 
+	color:#8c99a9;
+}
+/*Blog*/
+span.ipost-author {
+	color: #414042;
+}
+iframe.iblog-iframe {
+	border:none; 
+	width: 100%;
+}
+/*Contact*/
+.contact2-wrap .subtitle.icontact-widg {
+	padding-top:60px;
+}
+span.iside-bar-cfont {
+	font-weight:bold; 
+	color:#414042;
+}
+i.iside-icon-contact {
+	line-height: 25px !important;
+}
+/*Homepage - Why Chosse Us BG*/
+@media (min-width:1800px){
+	#second .bg {
+		background-size: 69%;
+		background-position: bottom left;
+	}
+}
+/*Top Header Issue*/
+.top-info-contact #search {
+	float: none;
+}
+
+@media (min-width:767px){
+	.complete-footer { 
+		position:relative !important;
+	}
+	#footer {
+		position: fixed;
+		z-index: -1;
+		bottom: 75px;
+	}
+	.bottom-footer{ 
+		position:fixed; 
+		bottom:0;
+	}
+}

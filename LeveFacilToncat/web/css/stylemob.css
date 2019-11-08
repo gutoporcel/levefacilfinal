@@ -1,0 +1,366 @@
+
+
+@media (max-width:767px) {
+    .some-mob {
+        display:none;
+    }
+
+    .menu-oficial li a{
+        display:block;
+        width:100%;
+        margin: 0 35px !important;
+        padding: 8px 0 8px !important;
+    }
+
+    .bar .logo {
+        max-height: 2em;
+        padding-top: 1px;
+    }
+
+    .bg-transparent-mob {
+        background:transparent;
+    }
+
+    .bar-1 .menu-horizontal > li > .dropdown__trigger, .bar-1 .menu-oficial > li > a {
+        border:none;
+    }
+
+    #menu1 {
+        padding-top:0;
+        margin-top: -12px;
+        background: linear-gradient(rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 1)) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.49);
+    }
+
+    .bgblackmob {
+        background: black !important;
+    }
+
+    .bgcinzamob {
+        background: #222 !important;
+    }
+
+    h1 {
+        line-height: 30px;
+        font-size: 22px !important;
+    }
+
+    h2 {
+        line-height: 20px;
+        font-size: 16px !important;
+    }
+
+    .p-font1 {
+        font-size:15px;
+    }
+
+    .height-70 {
+        padding:3em 0;
+    }
+
+    .padding,
+    .padding .col-xs-12{
+        padding:0 !important;
+        float:left;
+        margin-bottom:0 !important;
+    }
+
+    .padding input{
+        margin-bottom:15px;
+    }
+
+    .padding input,
+    .padding select{
+        height:3.5em;
+    }
+
+    .float-left-mob {
+        float: left;
+    }
+
+    .accordion__title {
+        padding: 0 !important;
+        position: relative;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .accordion__title span.h5 {
+        padding-bottom: 15px;
+    }
+
+    .accordion .accordion__title:after,
+    .accordion li.active .accordion__title:after {
+        top: 0;
+        right: -30px;
+    }
+
+    .btnEnviarMensagem {
+        padding: 10px 30px;
+        display: block;
+        width: 50%;
+        text-align: center;
+        float:none;
+        margin: 0 auto;
+        margin-top:50px;
+    }
+
+    .hamburger-toggle {
+        padding: 20px 10px;
+        z-index:999;
+    }
+
+    .interrogacao {
+        right: 11px;
+        bottom: 27px;
+    }
+
+    .espacamentoinputmob {
+        padding: 20px 0;
+    }
+    
+    .radioFormulario span {
+        padding-top: 15px !important;
+    }
+
+    .bootstrap-select > .dropdown-toggle, .bootstrap-select > .dropdown-toggle.bs-placeholder {
+        background: #222 !important;
+        height: 51px;
+    }
+
+    .inputfile-6 + label {
+        background-color: #222 !important;
+        height: 45px !important;
+    }
+
+
+    .boxviagem {
+        width: 100%;
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    
+    .left-ipad {
+        float:left;
+    }
+
+    .right-ipad {
+        float:right;
+    }
+
+    .some-ipad {
+        display:none;
+    }
+
+    .bar .logo {
+        max-height: 2em;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size:30px !important;
+        line-height: 35px;
+    }
+
+    .p-font1 {
+        font-size:16px;
+    }
+
+    .btn-home a {
+        padding: 5px 18px;
+        margin-right: 15px;
+        font-size: 11px;
+    }
+
+    img[src="img/2gb100min.png"] {
+        width: 200px;
+        margin: 0;
+    }
+
+    footer ul.socicon-menu > li {
+        display: inline;
+    }
+
+    .bar-1 .menu-horizontal > li > .dropdown__trigger, .bar-1 .menu-oficial > li > a {
+        margin: 0 2px;
+    }
+
+    #menu1 {
+        padding-bottom: 15px;
+    }
+
+    .padding div{
+        padding:0;
+    }
+
+    .padding div{
+        padding:0;
+    }
+
+    .textright-ipad {
+        text-align: right;
+        padding-right:20px;
+    }
+
+    .textright-ipad li {
+        margin-right: 5px;
+    }
+}
+
+@media (min-width:1000px) {
+    .some-pc {
+        display:none;
+    }
+
+    .bar .logo {
+        padding-left: 55px;
+    }
+
+    .p-absolute {
+        position:absolute;
+    }
+
+    .formularios .positioninput {
+        line-height: 15px;
+        margin-top: 5px;
+        font-size: 11px;
+    }
+
+    .w100ppc {
+        width: 100% !important;
+    }
+
+    /*.chkpc {
+        width: 40px;
+        float: left;
+    }*/
+
+    .float-left-pc {
+        float: left;
+    }
+}
+
+@media (max-width:500px) {
+
+    h1 {
+        line-height: 27px;
+        font-size: 18px !important;
+    }
+
+    h2 {
+        line-height: 18px;
+        font-size: 14px !important;
+    }
+
+}
+
+
+
+@media (min-width: 990px){
+    .menu-horizontal li:not(:last-child) {
+        margin-right: 0.5em;
+    }
+}
+
+
+@media (min-width:1000px) and (max-width:1900px) {
+
+    h1 {
+        line-height: 40px;
+        font-size: 35px !important;
+    }
+
+    .p-font1 {
+        font-size: 16px;
+    }
+
+    img[src="img/2gb100min.png"] {
+        width: 250px;
+        margin: 0;
+    }
+
+    .btn-home a {
+        padding: 5px 18px;
+        margin-top:25px;
+        margin-right: 15px;
+        font-size: 15px;
+    }
+}
+
+
+@media (min-width:1000px) and (max-width:1400px) {
+
+    .bar .logo {
+        padding-left: 20px;
+    }
+
+    .socicon-menu {
+        padding-right: 20px;
+    }
+
+}
+
+
+@media (min-width:950px) and (max-width:1020px) {
+
+    .bar-1 .menu-horizontal > li > .dropdown__trigger, .bar-1 .menu-oficial > li > a {
+        margin: 0 2px;
+    }
+
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .bar-2 .menu-horizontal > li:not(:first-child), .bar-1 .menu-horizontal > li:not(:first-child) {
+        margin-left: 0;
+    }
+}
+
+
+@media (min-width:1000px) and (max-width:1300px) {
+
+    .box_popup {
+        width: 70%;
+    }
+
+}
+
+
+@media (min-width:1300px) and (max-width:1500px) {
+
+    .box_popup {
+        width: 60%;
+    }
+
+}
+
+
+@media (min-width:768px) and (max-width:1000px) {
+
+    .box_popup {
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+    .slideshome .itens h1 {
+        font-size: 28px !important;
+        line-height: 30px;
+        color: white;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .slideshome .itens h1 {
+        font-size: 22px !important;
+        line-height: 30px;
+        color: white;
+        margin-bottom: 5px;
+    }
+}

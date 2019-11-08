@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+.head-social-icon{ width: 23px !important;}
+.icon-boxwrap2{ background:url(../images/ie9/icon-list-bg.png) no-repeat center; filter:none !important; box-shadow:none !important;;}
+.icon-box-3:hover .icon-box-back2{ filter:none !important;box-shadow:none !important;}
+
+.purchase-strip-blue .btn{ background:url(../images/ie9/purchase-but.png) no-repeat center; filter:none !important; border:none;}
+.purchase-strip-blue:hover .btn{ background:url(../images/ie9/purchase-but.png) no-repeat center; filter:none !important; border:none;}
+
+.left.carousel-control{ filter:none;}
+.right.carousel-control{ filter:none;}
+.price-table li{ min-height:44px;}
+.price-table li img{ padding-top:15px;}
+
+.appointment-form .btn-7b:before, .form-widget .btn-7b:before, .contact2-page-form .btn-7b:before{ font-size:80% !important;}
+.contact2-page-form.contact-v2 .btn-7b:before{ font-size:80% !important;}
+.contact2-page-form.contact-v1 .btn-7b:before{ font-size:80% !important;}
+
+.price-table li a img{ padding: 15px 0;}
+
+input[type="date"] {
+line-height: 18px !important;
+}
+
+.top-info-email {
+line-height: 38px;
+padding-left: 10px;
+}

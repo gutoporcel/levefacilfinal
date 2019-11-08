@@ -1,0 +1,29 @@
+/*Slider css for the revolution slider*/
+
+
+.imed-sl1 img{max-width: 100%;}
+
+.bluebg-t1{font-size: 3em !important; color: #fff; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 40px !important;}
+
+.whitebg-t1{font-size: 37px !important; color: #00b9f1; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 40px !important;}
+
+.bluebg-t2,.whitebg-t2{font-size: 27px !important; font-weight:bold; color: #231f20; font-family: 'Open Sans', sans-serif;}
+
+.bluebg-t3{font-size: 13px !important; color: #fff; font-family: 'Open Sans', sans-serif;}
+
+.whitebg-t3{font-size: 13px !important; color: #999999; font-family: 'Open Sans', sans-serif;}
+
+.s1-but a{font-size: 15px !important; font-weight:bold; color: #231f20; padding: 15px 25px; background-color: #fff;}
+
+.s1-but a:hover{color: #00b9f1;}
+
+@media (max-width:992px){
+	.bluebg-t1{font-size: 1.4em !important; color: #fff; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 40px !important;}
+	
+	}
+
+
+@media (max-width:500px){
+	.bluebg-t1{font-size: 0.7em !important; color: #fff; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 40px !important;}
+	
+	}
