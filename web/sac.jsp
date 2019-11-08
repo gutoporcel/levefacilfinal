@@ -76,7 +76,7 @@
                     </div>
                     <ul>                    	
                          <li><a href="alterarSenhaCliente.jsp">Mudar Senha</a></li>
-                        <li><a href="index.html">Logout</a></li>
+                        <li><a href="deslogar.jsp">Logout</a></li>
                     </ul>
                 </div>
             </div>
