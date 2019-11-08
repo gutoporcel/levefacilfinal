@@ -44,6 +44,9 @@ public class Cartao extends HttpServlet {
        String cvv = request.getParameter("cvv");
        String validade = request.getParameter("validade");
        String idCliente = request.getParameter("idCliente");
+       String idCartao = request.getParameter("idCartao");
+       
+       
          Mcartao cartao = new Mcartao();
         
        cartao.setId_cliente(Integer.parseInt(idCliente));
@@ -52,6 +55,9 @@ public class Cartao extends HttpServlet {
        cartao.setBandeira(bandeira);
        cartao.setCvv(cvv);
        cartao.setValidadeCartao(validade); 
+       //cartao.setId_cartao(Integer.parseInt(idCartao));
+       
+       
   
         if (request.getParameter("acao").equalsIgnoreCase("inseriCartao")) {
                 if(cartaoDao.inserirCartao(cartao)){
@@ -61,7 +67,29 @@ public class Cartao extends HttpServlet {
                     
                 }
                   response.sendRedirect("listaCartoesCliente.jsp");
+        } else if(request.getParameter("acao").equalsIgnoreCase("alteraCartao")){
+                  Mcartao cartao1 = new Mcartao();
+        
+       cartao1.setId_cliente(Integer.parseInt(idCliente));
+       cartao1.setNomeCartao(nomeCartao);
+       cartao1.setNumeroCartao(numeroCartao);
+       cartao1.setBandeira(bandeira);
+       cartao1.setCvv(cvv);
+       cartao1.setValidadeCartao(validade); 
+       cartao1.setId_cartao(Integer.parseInt(idCartao));
+       
+            
+             if(cartaoDao.alteraCartao(cartao1)== "OK"){
+                 
+             }
+            response.sendRedirect("listaCartoesCliente.jsp");
+            
+            
         }
+        
+        
+        
+        
         
          } catch (Exception erro) {
 

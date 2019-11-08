@@ -130,6 +130,7 @@
                             <div class="btn-group">
                                 <a href="gerenciarCartaoCliente.jsp" class="btn"><i class="icol-add"></i> Novo Cartão</a>
                                 <a href="listaTransacoesCliente.jsp" class="btn"><i class="icol-application-view-list"></i> Histórico de Transações</a>
+                                <a href="gerenciarCartaoClienteEditar.jsp" class="btn"><i class="icol-application-edit"></i> Alterar Cartão</a>
                             </div>
                         </div>
                     </div>

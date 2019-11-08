@@ -81,4 +81,35 @@ public class CartaoDao {
         }  
 
      
+         
+         
+         
+             public String alteraCartao(Mcartao cartao) {
+        
+        String resp = "";
+        try {
+             conn = ConnectionFactory.getConnection();
+           String sql = "update tb_cartao set nome_cartao =?, bandeira = ?,codigo_seguranca = ?, numero_cartao = ?,validade =? where id_cliente = ?  and id_cartao = ?; " ;
+           stmt = conn.prepareStatement(sql);
+           
+            stmt.setString(1, cartao.getNomeCartao());
+            stmt.setString(2, cartao.getBandeira());
+            stmt.setString(3, cartao.getCvv());
+            stmt.setString(4, cartao.getNumeroCartao());
+            stmt.setString(5, cartao.getValidadeCartao());             
+              stmt.setInt(6, cartao.getId_cliente());
+              stmt.setInt(7, cartao.getId_cartao());
+   
+            
+            stmt.executeUpdate();
+            
+            stmt.close();
+            conn.close();
+            
+            resp = "OK";
+        } catch (SQLException e) {
+            resp = "ERRO: " + e.toString();
+        }
+        return resp;
+    }
 }
