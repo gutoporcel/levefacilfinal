@@ -87,7 +87,37 @@ public class VeiculoDao {
         return lista;
     }  
      
-    
+              public String alteraVeiculo(Mveiculo veiculo) {
+        
+        String resp = "";
+        try {
+             conn = ConnectionFactory.getConnection();
+           String sql = "   update tb_veiculo set renavam=?,placa=?,modelo=?,cor=?,marca=?,porte=?,ano=?,carrocaria=? where id_veiculo=? and id_motorista=?;" ;
+           stmt = conn.prepareStatement(sql);
+           
+            stmt.setString(1, veiculo.getRenavam());
+            stmt.setString(2, veiculo.getPlaca());
+            stmt.setString(3, veiculo.getModelo());
+            stmt.setString(4, veiculo.getCor());
+            stmt.setString(5, veiculo.getMarca()); 
+            stmt.setString(6, veiculo.getPorte());   
+            stmt.setString(7, veiculo.getAno());   
+            stmt.setString(8, veiculo.getCarroceria());   
+            stmt.setInt(9, veiculo.getIdVeiculo());
+            stmt.setInt(10, veiculo.getIdMotorista());
+   
+            
+            stmt.executeUpdate();
+            
+            stmt.close();
+            conn.close();
+            
+            resp = "OK";
+        } catch (SQLException e) {
+            resp = "ERRO: " + e.toString();
+        }
+        return resp;
+    }
     
     
     

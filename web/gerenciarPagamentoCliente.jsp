@@ -247,8 +247,6 @@
                                         <input type="hidden" name="acao">
 
                                     
-                                       <input type="submit" value="Submit" class="btn btn-danger">
-                                       <input type="reset" value="Reset" class="btn ">
                                     </div>
                              </div>
 

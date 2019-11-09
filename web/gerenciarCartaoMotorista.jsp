@@ -158,7 +158,7 @@
             <!-- Main Navigation -->
             <div id="mws-navigation">
                    <ul>
-                               <li class="active"><a href="dashboardMotorista.jsp"><i class="icon-home"></i> Home</a></li>
+                               <li><a href="dashboardMotorista.jsp"><i class="icon-home"></i> Home</a></li>
                 <li><a href="dadosMotorista.jsp"><i class="icon-business-card"></i>Perfil</a></li>
                 <li class="active" ><a href="listaCartoesMotorista.jsp"><i class="icon-lock" ></i>Conta Bancária</a></li>
                 <li><a href="listaCarrosMotorista.jsp"><i class="icon-truck"></i>Veículos</a></li>

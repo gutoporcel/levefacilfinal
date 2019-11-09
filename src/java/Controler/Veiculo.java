@@ -67,6 +67,7 @@ public class Veiculo extends HttpServlet {
             String cor = request.getParameter("cor");
             String carrocaria = request.getParameter("carrocaria");
             int idMoto = Integer.parseInt(request.getParameter("idMotorista"));
+         
             
             Mveiculo v = new Mveiculo();
             v.setAno(ano);
@@ -79,7 +80,7 @@ public class Veiculo extends HttpServlet {
             v.setPorte(porte);
             v.setRenavam(renavam);
                  
-            
+  
             
             
             
@@ -89,11 +90,38 @@ public class Veiculo extends HttpServlet {
             response.sendRedirect("listaCarrosMotorista.jsp");
             
             
+            }else if (request.getParameter("acao").equalsIgnoreCase("alteraVeiculo")) {
+                   int idCarro = Integer.parseInt(request.getParameter("idCarro"));
+                    Mveiculo v1 = new Mveiculo();
+            v1.setAno(ano);
+            v1.setCarroceria(carrocaria);
+            v1.setCor(cor);
+            v1.setIdMotorista(idMoto);
+            v1.setMarca(marca);
+            v1.setModelo(modelo);
+            v1.setPlaca(placa);
+            v1.setPorte(porte);
+            v1.setRenavam(renavam);
+            v1.setIdVeiculo(idCarro);
+                
+                
+                
+                
+                
+            veiculodao.alteraVeiculo(v1);
+            response.sendRedirect("listaCarrosMotorista.jsp");
+            
+            
             }
             
-        } catch (Exception e) {
             
             
+            
+            
+            
+        } catch (IOException | NumberFormatException e) {
+            
+            response.sendRedirect("paginaErro.jsp");
             
         }
         

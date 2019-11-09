@@ -149,7 +149,7 @@
                                          <th>Porte</th>
                                           <th>renavam</th>
                                            <th>ano</th>
-                                           <th>botao</th>
+                                         
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -168,7 +168,7 @@
                                             out.println("<td>" + lista.get(i).getPorte()+ "</td>");
                                             out.println("<td>" + lista.get(i).getRenavam() + "</td>");
                                              out.println("<td>" + lista.get(i).getAno() + "</td>");
-                                           out.println("<td>" + "<input type='hidden' value='"+ lista.get(i).getIdVeiculo()+"'>"+  "<a href='gerenciarCarroMotoristaEditar.jsp' class='btn'><i class='icol-application-edit'></i> Editar</a>"+"</td>");
+                                           //out.println("<td>" + "<input type='hidden' value='"+ lista.get(i).getIdVeiculo()+"'>"+  "<a href='gerenciarCarroMotoristaEditar.jsp' class='btn'><i class='icol-application-edit'></i> Editar</a>"+"</td>");
                                             //  <td><input class="btn" type="button" onclick="funcao1()" value="Desativar Usuario" /> <input class="btn2" type="button" onclick="funcao2()" value="Ativar Usuário" /></td>
                                             out.println("</tr>");
 
@@ -180,21 +180,7 @@
                             </table>
                         </div>
                 </div>
-                  <div class="mws-form-col-3-8">
-                                        <label class="mws-form-label">Tipo do Carreto:</label>
-                                        <div class="mws-form-item">                                              
-                                            <select name="tipoCarreto" id="tipoCarreto">
-                                                 <option value="" selected disabled>-</option>
-                                          <%            ArrayList<Mveiculo> lista1 = new VeiculoDao().listarCarro(lo);
-                                        for (int i = 0; i < lista.size(); i++) {                        
 
-                             %>
-                                                <option value="<%= lista1.get(i).getIdVeiculo()%>" > <%= lista1.get(i).getModelo()%></option>
-                                              <% } %>
-                                            </select>
-                                                  
-                                        </div>
-                                    </div>
                                 
                                 
                                 
