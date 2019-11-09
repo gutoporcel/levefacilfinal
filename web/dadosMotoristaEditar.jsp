@@ -23,6 +23,18 @@
                                     }
                                     
                                     
+               
+      function excluirMotorista() {
+              
+           document.formAlteraMotorista.acao.value = 'excluirMotorista';
+           document.formAlteraMotorista.submit();
+
+                                    
+
+                                    }                         
+                                    
+                                    
+                                    
          </script>      
     
 <meta charset="utf-8">
@@ -320,6 +332,7 @@
                             
                     		
                                 <button type="button" value="alterar" name="btnAltera" class="btn btn-danger" onclick="alterarMotorista()" ID="btnConfirmar" >Alterar</button>
+                                <button type="button" value="alterar" name="btnAltera" class="btn btn-danger" onclick="excluirMotorista()" ID="btnConfirmar" >Excluir</button>
                                         <input type="hidden" name="acao">
                     			
                                         <input type="hidden" name="id" value="<%= id %>">

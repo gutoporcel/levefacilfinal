@@ -75,6 +75,10 @@ public class AlteraCliente extends HttpServlet {
                 despachar.forward(request, response);
                }
                 
+            } else if (request.getParameter("acao").equalsIgnoreCase("excluir")) {
+                clienteDao.excluirCliente(c);
+                response.sendRedirect("index.jsp");
+
             }
 
         } catch (Exception e) {

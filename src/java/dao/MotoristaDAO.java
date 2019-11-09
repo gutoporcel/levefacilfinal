@@ -329,7 +329,30 @@ public class MotoristaDAO {
         return lista;
     }
     
-    
+        
+         public String excluirMotorista(MMotorista motorista) {
+        
+        String resp = "";
+        try {
+         
+            String sql = " DELETE FROM tb_motorista WHERE id_motorista=?;";
+             conn = ConnectionFactory.getConnection();
+            stmt = conn.prepareStatement(sql);
+
+            
+            stmt.setInt(1, motorista.getIdMotorista());
+            
+            stmt.execute();
+            
+            stmt.close();
+            conn.close();
+            
+            resp = "OK";
+        } catch (Exception e) {
+            resp = "ERRO: " + e.toString();
+        }
+        return resp;
+    }
     
     
     

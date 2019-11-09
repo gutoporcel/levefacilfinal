@@ -307,6 +307,33 @@ public class ClienteDao {
         return achou;
     } 
     
+     
+     
+     
+     
+         public String excluirCliente(MCliente cliente) {
+        
+        String resp = "";
+        try {
+         
+            String sql = " DELETE FROM tb_cliente WHERE id_cliente=?;";
+             conn = ConnectionFactory.getConnection();
+            stmt = conn.prepareStatement(sql);
+
+            
+            stmt.setInt(1, cliente.getIdCliente());
+            
+            stmt.execute();
+            
+            stmt.close();
+            conn.close();
+            
+            resp = "OK";
+        } catch (Exception e) {
+            resp = "ERRO: " + e.toString();
+        }
+        return resp;
+    }
     
     
     

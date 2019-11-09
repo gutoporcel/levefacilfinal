@@ -87,9 +87,15 @@ public class AlteraMotorista extends HttpServlet {
                 despachar.forward(request, response);
                }
                 
+            } else if (request.getParameter("acao").equalsIgnoreCase("excluirMotorista")) {
+                motoristadao.excluirMotorista(m);
+           response.sendRedirect("index.jsp");
             }
             
             
+            
+            
+            //excluirMotorista
             
             
             

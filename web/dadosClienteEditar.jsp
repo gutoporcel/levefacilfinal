@@ -20,9 +20,16 @@
            document.formAlteraCliente.acao.value = 'alterar';
            document.formAlteraCliente.submit();
 
-                                    
+  }
+  
+  
+      
+      function excluir() {
+              
+           document.formAlteraCliente.acao.value = 'excluir';
+           document.formAlteraCliente.submit();
 
-                                    }
+  }
                                     
                                     
          </script>                
@@ -318,6 +325,7 @@
                                           <%    } %>
                                         
                                         <button type="button" value="alterar" name="btnAltera" class="btn btn-danger" onclick="Alterar()" ID="btnConfirmar" >Alterar</button>
+                                        <button type="button" value="alterar" name="btnAltera" class="btn btn-danger" onclick="excluir()" ID="btnConfirmar" >Excluir Conta</button>
                                         <input type="hidden" name="acao">
                     			
                                         <input type="hidden" name="id" value="<%= id %>">
