@@ -44,6 +44,7 @@ public class ContaBancariaMotorista extends HttpServlet {
             String numero_conta = request.getParameter("conta");
              String agencia = request.getParameter("agencia");
              int id_motorista = Integer.parseInt(request.getParameter("id"));
+            int id_conta = Integer.parseInt((request.getParameter("idConta")));
              
              McontaBancariaMotorista conta = new McontaBancariaMotorista();
              
@@ -54,6 +55,7 @@ public class ContaBancariaMotorista extends HttpServlet {
              conta.setAgencia(agencia);
              conta.setNumero_conta(numero_conta);
              conta.setIdMotorista(id_motorista);
+           //  conta.setIdContaBancaria(id_conta);
             
             
                if (request.getParameter("acao").equalsIgnoreCase("cadastroConta")) {
@@ -62,13 +64,30 @@ public class ContaBancariaMotorista extends HttpServlet {
             response.sendRedirect("listaCartoesMotorista.jsp");
             
             
+            } else     if (request.getParameter("acao").equalsIgnoreCase("alteraConta")) {
+                
+                 conta.setTitular(titular);
+             conta.setBanco(banco);
+             conta.setTipo(tipo);
+             conta.setAgencia(agencia);
+             conta.setNumero_conta(numero_conta);
+             conta.setIdMotorista(id_motorista);
+            conta.setIdContaBancaria(id_conta);  
+                   
+           if( contabancariadao.alteraConta(conta)=="OK"){}
+            response.sendRedirect("listaCartoesMotorista.jsp");
+            
+            
             }
+              
             
             
             
             
             
-        } catch (Exception e) {
+        } catch (IOException | NumberFormatException e) {
+             response.sendRedirect("PaginaErro.jsp");
+            
         }
                 
         

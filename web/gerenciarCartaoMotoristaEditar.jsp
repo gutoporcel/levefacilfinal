@@ -1,3 +1,6 @@
+<%@page import="dao.ContaBancariaMotoristaDao"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.McontaBancariaMotorista"%>
 <%@include file="sessaocliente.jsp" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -37,8 +40,64 @@
     <link rel="stylesheet" type="text/css" href="css/mws-theme.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/themer.css" media="screen">
 
-    <title>Leve FÃ¡cil - Dashboard</title>
+    <title>Leve Fácil - Dashboard</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+<script>
+  function alteraConta()
+            {
+                if(validaCadastroContaMotosita()){
+                    document.formAlteraConta.acao.value = 'alteraConta';
+                    document.formAlteraConta.submit();
+                }
+            }
+
+
+
+
+ function  validaCadastroContaMotosita() {
+                //var idCliente = formCartao.idCliente.value;
+                var titular =formAlteraConta.titular.value;
+                var banco = formAlteraConta.banco.value;
+                var tipoConta =  formAlteraConta.tipoConta.value;
+                var agencia =  formAlteraConta.agencia.value;
+                var conta = formAlteraConta.conta.value;
+                
+                
+                
+                if (titular === "") {
+                    alert('Preencha o campo com  nome do Titular  da conta');
+                  formAlteraConta.titular.focus();
+                    return false;
+                }
+          
+                   if ( banco === "") {
+                    alert('Prencha o campo com nome do Banco ');
+                    formAlteraConta.banco.focus();
+                    return false;
+                }
+            
+                     if ( tipoConta === "") {
+                    alert('Selecione o tipo de conta');
+                    formAlteraConta.tipoConta.focus();
+                    return false;
+                }
+                       if ( agencia === "") {
+                    alert('Preencha o campo agencia');
+                    formAlteraConta.agencia.focus();
+                    return false;
+                }
+                       if ( conta === "") {
+                    alert('Preencha o campo conta');
+                    formAlteraConta.conta.focus();
+                    return false;
+                }
+                return true;
+
+            }
+
+
+</script>
 
 </head>
 
@@ -71,7 +130,7 @@
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        OlÃ¡, <%= usuario %>
+                        Ola, <%= usuario %>
                     </div>
                     <ul>
                         <li><a href="alterarSenhaMotorista.jsp">Mudar Senha</a></li>
@@ -101,13 +160,28 @@
 
             <!-- Main Navigation -->
             <div id="mws-navigation">
-                <ul>
-                    <li><a href="dashboardMotorista.jsp"><i class="icon-home"></i> Dashboard</a></li>
-                    <li><a href="dadosMotorista.jsp"><i class="icon-list-2"></i> Dados Cadastrais</a></li>
-                    <li class="active"><a href="listaCartoesMotorista.jsp"><i class="icon-business-card"></i>CartÃµes</a></li>
-                    <li><a href="listaCarrosMotorista.jsp"><i class="icon-truck"></i>VeÃ­culos</a></li>
-                    <li><a href="listaSolicitacoesMotorista.jsp"><i class="icon-briefcase"></i>SolicitaÃ§Ãµes</a></li>
-                    <li><a href="listaLeilaoMotorista.jsp"><i class="icon-legal"></i>LeilÃ£o Reverso</a></li>
+                   <ul>
+                               <li class="active"><a href="dashboardMotorista.jsp"><i class="icon-home"></i> Home</a></li>
+                <li><a href="dadosMotorista.jsp"><i class="icon-business-card"></i>Perfil</a></li>
+                <li class="active" ><a href="listaCartoesMotorista.jsp"><i class="icon-lock" ></i>Conta Bancária</a></li>
+                <li><a href="listaCarrosMotorista.jsp"><i class="icon-truck"></i>Veículos</a></li>
+                <li ><a href="listaTransacoesMotorista.jsp"><i class="icon-archive"></i>Histórico</a></li>
+                <!--  <li><a href="listaSolicitacoesMotorista.jsp"><i class="icon-check"></i>Solicitações</a></li>  -->  
+                <li><a href="sacMotorista.jsp"><i class="icol32-user"></i> SAC</a></li>
+                       
+                       
+                       
+                   <!--    
+                       
+                       
+                         <li><a href="dashboardMotorista.jsp"><i class="icon-home"></i> Home</a></li>
+                   <li ><a href="dadosMotorista.jsp"><i class="icon-business-card"></i>Perfil</a></li>
+                   <li class="active"><a href="listaCartoesMotorista.jsp"><i class="icon-lock" ></i>Conta Bancária</a></li>
+                   <li><a href="listaCarrosMotorista.jsp"><i class="icon-truck"></i>Veículos</a></li>
+                   <li ><a href="listaTransacoesMotorista.jsp"><i class="icon-archive"></i>Histórico</a></li>
+                    <li><a href="listaSolicitacoesMotorista.jsp"><i class="icon-check"></i>Solicitações</a></li>
+                    <li><a href="sacMotorista.jsp"><i class="icol32-user"></i> SAC</a></li>
+                    -->
                 </ul>
             </div>
         </div>
@@ -125,19 +199,47 @@
                         <span>Dados da Conta</span>
                     </div>
                     <div class="mws-panel-body no-padding">
-                        <form class="mws-form">
+                        <form class="mws-form" name="formAlteraConta" action="ContaBancariaMotorista" method="post">
                             <div class="mws-form-row">
                                 <div class="mws-form-cols">
-                                    <div class="mws-form-col-4-8">
+                                   
+                                     <div class="mws-form-col-2-8">
+                                     
+                                              <label class="mws-form-label">Selecione o cartao para alterar</label>                                   
+                                            <select name="idConta" id="idConta">
+                                                 <option value="" selected disabled>-</option>
+                                      
+                                                 
+                                                 
+                                                 
+                                                 
+                                                 <%        Login lo = new Login();
+                                        lo.setId_usuario(id);
+                                              
+                                              ArrayList<McontaBancariaMotorista> lista = new ContaBancariaMotoristaDao().listarConta(lo);
+                                        for (int i = 0; i < lista.size(); i++) {                        
+
+                             %>
+                             <option value="<%= lista.get(i).getIdContaBancaria()%>" > <%= lista.get(i).getTitular() %></option>
+                                              <% } %>
+                                            </select>
+                                       
+                                     </div>
+                                    
+                                    
+                                    
+                                    <div class="mws-form-col-2-8">
+                                        
+                                        
                                         <label class="mws-form-label">Titular</label>
                                         <div class="mws-form-item">
-                                            <input type="text" value="Dennis Bahia">
+                                            <input type="text" id="titular" name="titular">
                                         </div>
                                     </div>
                                     <div class="mws-form-col-2-8">
                                         <label class="mws-form-label">Banco</label>
                                         <div class="mws-form-item">
-                                            <input type="text" value="Bradesco">
+                                            <input type="text" id="banco"  name="banco">
                                         </div>
                                     </div>
                                     <div class="mws-form-col-2-8">
@@ -146,7 +248,7 @@
                                             <select id="tipoConta" name="tipoConta" class="select-tipo">
                                                 <option value="" selected disabled>-</option>
                                                 <option value="corrente">Conta Corrente</option>
-                                                <option value="poupanca">Conta PoupanÃ§a</option>
+                                                <option value="poupanca">Conta Poupança</option>
                                             </select>
                                         </div>
                                     </div>
@@ -158,39 +260,29 @@
                                     <div class="mws-form-col-3-8">
                                         <label class="mws-form-label">Agencia</label>
                                         <div class="mws-form-item">
-                                            <input type="text" value="11">
+                                            <input id="agencia" type="text" name="agencia">
                                         </div>
                                     </div>
                                     <div class="mws-form-col-3-8">
                                         <label class="mws-form-label">Conta</label>
                                         <div class="mws-form-item">
-                                            <input type="text" value="07456251-8"> 
+                                            <input id="conta  " type="text"name="conta">
                                         </div>
                                     </div>
 
-                                    <div class="mws-form-col-2-8">
-                                        <div id="poupanca" style="display:none;" class="formulario">
-                                            <label class="mws-form-label">OperaÃ§Ã£o</label>
-                                            <div class="mws-form-item">
-                                                <input type="text" value="14">
-                                            </div>
-                                        </div>
-                                    </div>
+                              
                                 </div>
                             </div>
-                    <script type="text/javascript">
-                        var select = document.getElementById("tipoConta");
-var formularios = document.querySelectorAll('.formulario');
-select.onchange = function () {
-    for (var i = 0; i < formularios.length; i++) formularios[i].style.display = 'none';
-    var divID = select.options[select.selectedIndex].value;
-    var div = document.getElementById(divID);
-    div.style.display = 'block';
-};
-                    </script>
+
+                            <input name="acao" type="hidden">
+                            <input name="id" type="hidden" value="<%= id %>">
+                            
+                            
                             <div class="mws-button-row">
-                                <input type="submit" value="Submit" class="btn btn-danger">
-                                <input type="reset" value="Reset" class="btn ">
+                                
+                                <button class="btn btn-success" type="button" onclick="alteraConta()" value="alteraConta" />Altera Conta</button>
+                               <!-- <input type="submit" value="Submit" class="btn btn-danger">
+                                <input type="reset" value="Reset" class="btn "> -->
                             </div>
                     </form>
                     </div>
@@ -203,7 +295,7 @@ select.onchange = function () {
 
         <!-- Footer -->
         <div id="mws-footer">
-            Sistema desenvolvido por Grupo 3 - Leve FÃ¡cil &copy; 2019,
+            Sistema desenvolvido por José Augusto porcel Stacio Grupo 3 - Leve Fácil &copy; 2019,
         </div>
 
     </div>

@@ -47,11 +47,50 @@
                <script>
             function alteraCartao()
             {
-                //if(validaCadastroCartao()){
+                if(validaCadastroCartaoEditar()){
                     document.formAlteraCartao.acao.value = 'alteraCartao';
                     document.formAlteraCartao.submit();
-                //}
+                }
             }
+            
+            
+             function  validaCadastroCartaoEditar() {
+                //var idCliente = formCartao.idCliente.value;
+                var nomeCartao =formAlteraCartao.nomecartao.value;
+                var numeroCartao = formAlteraCartao.numerocartao.value;
+                var bandeira =  formAlteraCartao.bandeira.value;
+                var cvv =  formAlteraCartao.cvv.value;
+                var validade = formAlteraCartao.validade.value;
+                if (nomeCartao === "") {
+                    alert('Preencha o campo com  nome do cartão');
+                    formAlteraCartao.nomeCartao.focus();
+                    return false;
+                }
+                if ( numeroCartao === "" || numeroCartao.length < 19 ) {
+                    alert('Preencha o campo  numero do cartão corretamente');
+                    formAlteraCartao.numeroCartao.focus();
+                    return false;
+                }
+                   if ( bandeira === "") {
+                    alert('selecione  a bandeira do cartão');
+                    formAlteraCartao.bandeira.focus();
+                    return false;
+                }
+                     if ( cvv === "" || cvv.length < 3) {
+                    alert('Preencha o campo  numero do cvv');
+                    formAlteraCartao.cvv.focus();
+                    return false;
+                }
+                     if ( validade === "") {
+                    alert('Preencha     o campo validade do cartão');
+                    formAlteraCartao.validade.focus();
+                    return false;
+                }
+                return true;
+
+            }
+            
+            
             
         </script>
         

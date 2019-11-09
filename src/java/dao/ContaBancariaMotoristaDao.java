@@ -83,5 +83,36 @@ public class ContaBancariaMotoristaDao {
     
     
     
+     
+               public String alteraConta(McontaBancariaMotorista conta) {
+        
+        String resp = "";
+        try {
+             conn = ConnectionFactory.getConnection();
+           String sql = "  update tb_conta_bancaria set titular =?, banco=?,tipo=?, numero_conta=?, agencia =? where id_conta_bancaria=? and id_motorista=?; " ;
+           stmt = conn.prepareStatement(sql);
+           
+            stmt.setString(1, conta.getTitular());
+            stmt.setString(2, conta.getBanco());
+            stmt.setString(3, conta.getTipo());
+            stmt.setString(4, conta.getNumero_conta());
+            stmt.setString(5, conta.getAgencia());             
+              stmt.setInt(6, conta.getIdContaBancaria());
+              stmt.setInt(7, conta.getIdMotorista());
+   
+            
+            stmt.executeUpdate();
+            
+            stmt.close();
+            conn.close();
+            
+            resp = "OK";
+        } catch (SQLException e) {
+            resp = "ERRO: " + e.toString();
+        }
+        return resp;
+    }
+     
+     
     
 }

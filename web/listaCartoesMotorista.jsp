@@ -142,7 +142,8 @@
                     <div class="mws-panel-toolbar">
                         <div class="btn-toolbar">
                             <div class="btn-group">
-                                <a href="gerenciarCartaoMotorista.jsp" class="btn"><i class="icol-add"></i> Nova Conta</a>                    
+                                <a href="gerenciarCartaoMotorista.jsp" class="btn"><i class="icol-add"></i> Nova Conta</a>  
+                                 <a href="gerenciarCartaoMotoristaEditar.jsp" class="btn"><i class="icol-application-edit"></i> Alterar Conta</a>
 
                             </div>
                         </div>
