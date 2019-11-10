@@ -150,7 +150,7 @@
                                               <%
                                                   //MPedidoOrcamento ped = new MPedidoOrcamento();
                                                   //ped.setIdCliente(id);
-                                        ArrayList<MFinalizaOrcamento> lista5 = new OrcamentoDao().listarorcamentoEntregue(user);
+                                        ArrayList<MFinalizaOrcamento> lista5 = new OrcamentoDao().listarorcamentoEntregueMotorista(user);
                                         for (int i = 0; i < lista5.size(); i++) {
                                             out.println("<tr>");
                                           //  out.println("<td onclick=valor(" + lista2.get(i).getId_pedidoOrca() + ")>" + lista2.get(i).getId_pedidoOrca()+ "</td>");

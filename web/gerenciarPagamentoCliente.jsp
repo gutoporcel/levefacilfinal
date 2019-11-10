@@ -207,7 +207,7 @@
                              <div class="mws-form-row">
                                    <div class="mws-panel-col-4-8">
                                                
-                                   <label class="mws-form-label">Selecione o cartao para efetuar a compra</label>
+                                   <label class="mws-form-label">Selecione o cartão para efetuar a compra: </label>
                                         <div class="mws-form-item">                                              
                                             <select name="selecartao" id="tipoCarreto">
                                                  <option value="" selected disabled>-</option>
@@ -235,7 +235,7 @@
                                        
                                        
                                                 
-                                         <label class="mws-form-label">N° do Pedido: </label>    
+                                         <label class="mws-form-label">Código do Pedido: </label>    
                                          <input type="text" name="codigo"> <br><br>
                                          
                                          

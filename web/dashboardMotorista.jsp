@@ -214,21 +214,21 @@
         
              <div class="mws-panel grid_8">
                 	<div class="mws-panel-header">
-                    	<span><i class="icon-table"></i> Pedidos recebidos</span>
+                    	<span><i class="icon-table"></i> Pedidos Recebidos</span>
                     </div>
           
                  
                   <form name="frmOrcamento" action="PrincipalMotorista" method="post">
 
                             <div class="mws-panel-body"  >
-                                <label>escolha o carreto que ira fazer e prencha os campos</label> <hr>
+                                <label>Escolha o carreto que irá fazer e prencha os campos:</label> <hr>
 
-                                <label>N° pedido</label>
+                                <label>Código do Pedido:</label>
                                 <input type="text" id="idPedido" name="idPedido" class=""  />
 
 
-                                <label>valor</label>
-                                <input type="text" id="valor" name="valor" />
+                                <label>Valor:</label>
+                                <input type="text" id="valor" name="valor" placeholder="R$"  />
                                 
                           
                                 <input type="hidden" id="idMotorista" name="idMotorista" value="<%= id %>"/>
@@ -260,15 +260,15 @@
                             <thead>
                                 <tr>
                                     
-                                    <th>Codigo</th>
+                                    <th>Código</th>
                                     <th>Partida</th>
                                     <th>Destino</th>
-                                    <th>Distancia</th>
+                                    <th>Distância</th>
                                     <th>Data</th>
-                                    <th>hora</th>
-                                    <th>Descicao</th>
-                                    <th>Situacao</th>
-                                      <th>id cliente</th>
+                                    <th>Hora</th>
+                                    <th>Descrição</th>
+                                    <th>Situação</th>
+                                     <!-- <th>id cliente</th> -->
                                       <th>Tipo</th>
                                       
                                      
@@ -289,7 +289,7 @@
                                              out.println("<td>" + lista2.get(i).getHora()+ "</td>");
                                             out.println("<td>" + lista2.get(i).getDescricao()+ "</td>");                                        
                                               out.println("<td>" + lista2.get(i).getSituacao()+ "</td>");
-                                                  out.println("<td>" + lista2.get(i).getIdCliente()+ "</td>");
+                                                  //out.println("<td>" + lista2.get(i).getIdCliente()+ "</td>");
                                                   out.println("<td>" + lista2.get(i).getTipoCarreto()+ "</td>");
                                                   
 
@@ -323,7 +323,7 @@
                       <div class="mws-panel-body no-padding">
                           
                            <form name="formFinaliza" class="form" action="Orcamento"  method="post"
-                            <label>Codigo: </label>
+                            <label>Código: </label>
                                <input size="4" name="codigo"  id="pedidoAceito" type="text" value="">  
                             <input type="hidden" name="acao">
                            
@@ -334,14 +334,14 @@
                         <table id="exemplo" class="mws-datatable-fn mws-table">
                             <thead>
                                 <tr>
-                                    <th>Código  </th>
+                                    <th>Código</th>
                                     <th>Nome Cliente </th>
                                     <th>Nome Motorista</th>
                                     <th>Local Partida</th>
                                     <th>Local Destino</th>
                                     <th>Distância</th>
                                     <th>Categoria</th>
-                                    <th>Descricao</th>
+                                    <th>Descrição</th>
                                     <th>Situação</th>
                                     <th>Data</th>
                                     
@@ -353,7 +353,7 @@
                                               <%
                                                   //MPedidoOrcamento ped = new MPedidoOrcamento();
                                                   //ped.setIdCliente(id);
-                                        ArrayList<MFinalizaOrcamento> lista5 = new OrcamentoDao().listarorcamentoClientepago(user);
+                                        ArrayList<MFinalizaOrcamento> lista5 = new OrcamentoDao().listarorcamentoEntreguePago(user);
                                         for (int i = 0; i < lista5.size(); i++) {
                                             out.println("<tr>");
                                           //  out.println("<td onclick=valor(" + lista2.get(i).getId_pedidoOrca() + ")>" + lista2.get(i).getId_pedidoOrca()+ "</td>");

@@ -161,7 +161,7 @@
                 
             	<div class="mws-panel grid_8">
                 	<div class="mws-panel-header">
-                    	<span>Dados do Motorista</span>
+                    	<span>Dados do Motorista </span>
                     </div>
                      <div class="mws-panel-body no-padding">
                         <form class="mws-form" name="formAlteraSenhaMotorista" action="AlteraMotorista" method="post">

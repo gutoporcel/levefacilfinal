@@ -125,7 +125,7 @@
                 <section class="content">
 
                   <div class="contato">
-                        <h3>Formulario de contato</h3>
+                        <h3>Formulário de contato</h3>
                   <BR><BR>
                   <form action="https://formspree.io/levefacilgrupo3@gmail.com" method="POST">
                     Diga seu nome:<br>
@@ -146,7 +146,7 @@
                        
             <!-- Footer -->
             <div id="mws-footer">
-            	Sistema desenvolvido por Grupo 3 - Leve Fáccil &copy; 2019,
+            	Sistema desenvolvido por José Augusto Porcel Stacio - Grupo 3 - Leve Fácil © 2019
             </div>
             
         </div>

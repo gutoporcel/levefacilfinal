@@ -152,12 +152,12 @@
                             <table class="mws-datatable-fn mws-table">
                                 <thead>
                                     <tr>
-                                        <th>Codigo Conta</th>
+                                        <th>Código Conta</th>
                                         <th>Banco</th>
                                         <th>Nome do titular</th>
-                                        <th>tipo de conta</th>
-                                        <th>N° conta</th>
-                                         <th>Agencia</th>
+                                        <th>Tipo de Conta</th>
+                                        <th>N° Conta</th>
+                                         <th>Agência</th>
                                     </tr>
                                 </thead>
                                 <tbody>

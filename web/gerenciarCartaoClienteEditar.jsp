@@ -228,7 +228,7 @@
 
                                             <div class="mws-form-col-1-8">
                                                 <label class="mws-form-label">CVV</label>
-                                                <input  type="text" name="cvv" id="cvv">
+                                                <input  type="text" name="cvv" id="cvv" maxlength="3">
                                             </div>
                                             <div class="mws-form-col-2-8">
                                                 <label class="mws-form-label">Validade</label>
@@ -242,7 +242,7 @@
                                 <div class="mws-button-row">
                                     
                                     
-                                    <button class="btn btn-danger" type="button" onclick="alteraCartao()" value="alteraCartao" />Altera  Cartão</button>
+                                    <button class="btn btn-danger" type="button" onclick="alteraCartao()" value="alteraCartao" />Alterar Cartão</button>
 
 
 

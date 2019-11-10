@@ -223,7 +223,7 @@ function  validaCadastroCarroMotosita() {
                                        <div class="mws-form-col-2-8">
                                         <label class="mws-form-label">renavam</label>
                                         <div class="mws-form-item">
-                                            <input  id="renavam" type="text" name="renavam" >
+                                            <input  id="renavam" type="text" name="renavam" maxlength="11" >
                                         </div>
                                     </div>
                                     <div class="mws-form-col-2-8">

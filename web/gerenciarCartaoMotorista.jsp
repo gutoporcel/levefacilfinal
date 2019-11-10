@@ -227,7 +227,7 @@
                             <div class="mws-form-row">
                                 <div class="mws-form-cols">
                                     <div class="mws-form-col-3-8">
-                                        <label class="mws-form-label">Agencia</label>
+                                        <label class="mws-form-label">Agência</label>
                                         <div class="mws-form-item">
                                             <input id="agencia" type="text" name="agencia">
                                         </div>

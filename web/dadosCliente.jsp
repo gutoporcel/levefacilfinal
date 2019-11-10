@@ -142,7 +142,7 @@
                                             out.println("<b>CPF: </b> " + lista.get(i).getCpfCliente()+ "<br>");
                                             out.println("<b>E-mail: </b>" + lista.get(i).getEmailCliente()+ "<br>");
                                             out.println("<b>Situação: </b>" + lista.get(i).getSutuacao()+ "<br>");                                            
-                                            out.println("<b>Data nascimento: </b>" + lista.get(i).getDataNaciCliente()+ "<br>");                                            
+                                            out.println("<b>Data de Nascimento: </b>" + lista.get(i).getDataNaciCliente()+ "<br>");                                            
                                             out.println("<b>Rua: </b>" + lista.get(i).getLogradouroCliente()+ "<br>");
                                             out.println("<b>Complemento: </b>" + lista.get(i).getComplementoCliente()+ "<br>");
                                             out.println("<b>Bairro: </b>" + lista.get(i).getBairroCliente()+ "<br>");
@@ -153,7 +153,7 @@
                                             out.println("<b>RG: </b>" + lista.get(i).getNumeroRgCliente()+ "<br>");
                                             out.println("<b>Telefone: </b>" + lista.get(i).getTelefoneCliente()+ "<br>");
                                             out.println("<b>Celular: </b>" + lista.get(i).getTellCelularCliente()+ "<br>");
-                                            out.println("<b>Senha: </b>" + lista.get(i).getSenhaCliente()+ "<br>");
+                                           // out.println("<b>Senha: </b>" + lista.get(i).getSenhaCliente()+ "<br>");
 
                                             //  <td><input class="btn" type="button" onclick="funcao1()" value="Desativar Usuario" /> <input class="btn2" type="button" onclick="funcao2()" value="Ativar Usuário" /></td>
                                            

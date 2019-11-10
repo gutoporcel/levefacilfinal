@@ -63,16 +63,20 @@ public class AlteraCliente extends HttpServlet {
             }else if(request.getParameter("acao").equalsIgnoreCase("alteraSenha")){
                 
                if(clienteDao.verificaSenha(c)== false){
-                    request.setAttribute("mensagemE", "Senha Coloque uma senha valida ");
-                    RequestDispatcher despachar = request.getRequestDispatcher("alterarSenhaCliente.jsp");
-                    despachar.forward(request, response);
+                    request.setAttribute("mensagemE", "Coloque uma senha válida! ");
+                          //response.sendRedirect("alterarSenhaCliente.jsp");
+                    
+                   RequestDispatcher despachar = request.getRequestDispatcher("alterarSenhaCliente.jsp");
+                   despachar.forward(request, response);
                    
                    
                } else{
                 
                 clienteDao.alteraSenhaCliente(c);
-                RequestDispatcher despachar = request.getRequestDispatcher("dadosCliente.jsp");
-                despachar.forward(request, response);
+                //  RequestDispatcher despachar = request.getRequestDispatcher("dadosCliente.jsp");
+                //despachar.forward(request, response);
+                 response.sendRedirect("dadosCliente.jsp");
+                
                }
                 
             } else if (request.getParameter("acao").equalsIgnoreCase("excluir")) {

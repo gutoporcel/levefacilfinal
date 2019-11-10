@@ -318,7 +318,90 @@ public class OrcamentoDao {
         return lista;
     }       
            
+          
+     
+      public ArrayList<MFinalizaOrcamento> listarorcamentoEntreguePago(Login lo) {
+        
+        ArrayList<MFinalizaOrcamento> lista = new ArrayList<>();
+        try {
            
+         //  String sql = "SELECT  b.nome_cartao, b.numero_cartao, b.bandeira, b.validade, b.codigo_seguranca FROM tb_cliente as C INNER JOIN tb_cartao as B on c.id_cliente = b.id_cliente  where b.id_cliente = ? order by c.nome;";
+            String sql= "select p.descricao, p.id_pedido_orcamento, n.nome,m.nome,p.partida,p.destino,p.distancia,p.id_nome_categoria_carreto,p.situacao,p.data_pedido,o.valor from tb_pedido_orcamento as p inner join tb_retorno_orcamento as o  on (p.id_pedido_orcamento = o.id_pedido_orcamento) inner join tb_cliente as n  on (p.id_cliente = n.id_cliente) inner join tb_motorista as m  on (o.id_motorista = m.id_motorista) where o.id_motorista = ? and p.situacao = 'Pagamento Efetuado' ;";
+            conn = ConnectionFactory.getConnection();
+            stmt = conn.prepareStatement(sql);
+           stmt.setInt(1,lo.getId_usuario());
+           stmt.execute();
+            
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                   MFinalizaOrcamento orcamento = new MFinalizaOrcamento ();
+                   orcamento.setIdPedido(rs.getInt("p.id_pedido_orcamento"));
+                    orcamento.setNomeCliente(rs.getString("n.nome"));
+                    orcamento.setNomeMotorista(rs.getString("m.nome"));
+                    orcamento.setPartida(rs.getString("p.partida"));
+                    orcamento.setDistino(rs.getString("p.destino"));
+                    orcamento.setDistancia(rs.getString("p.distancia"));
+                    orcamento.setCategoria(rs.getString("p.id_nome_categoria_carreto"));
+                    orcamento.setSituacao(rs.getString("p.situacao"));
+                    orcamento.setData(rs.getString("p.data_pedido"));
+                    orcamento.setValor(rs.getFloat("o.valor"));
+                    orcamento.setDescricao(rs.getString("p.descricao"));
+                    
+                    lista.add(orcamento);
+                }
+            }
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.toString();
+        }
+        return lista;
+    }       
+           
+           
+      
+      
+      public ArrayList<MFinalizaOrcamento> listarorcamentoEntregueMotorista(Login lo) {
+        
+        ArrayList<MFinalizaOrcamento> lista = new ArrayList<>();
+        try {
+           
+         //  String sql = "SELECT  b.nome_cartao, b.numero_cartao, b.bandeira, b.validade, b.codigo_seguranca FROM tb_cliente as C INNER JOIN tb_cartao as B on c.id_cliente = b.id_cliente  where b.id_cliente = ? order by c.nome;";
+            String sql= "select p.descricao ,p.id_pedido_orcamento, n.nome,m.nome,p.partida,p.destino,p.distancia,p.id_nome_categoria_carreto,p.situacao,p.data_pedido,o.valor from tb_pedido_orcamento as p inner join tb_retorno_orcamento as o  on (p.id_pedido_orcamento = o.id_pedido_orcamento) inner join tb_cliente as n  on (p.id_cliente = n.id_cliente) inner join tb_motorista as m  on (o.id_motorista = m.id_motorista) where m.id_motorista = ? and p.situacao = 'Pedido Entregue' ;";
+            conn = ConnectionFactory.getConnection();
+            stmt = conn.prepareStatement(sql);
+           stmt.setInt(1,lo.getId_usuario());
+           stmt.execute();
+            
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                   MFinalizaOrcamento orcamento = new MFinalizaOrcamento ();
+                   orcamento.setIdPedido(rs.getInt("p.id_pedido_orcamento"));
+                    orcamento.setNomeCliente(rs.getString("n.nome"));
+                    orcamento.setNomeMotorista(rs.getString("m.nome"));
+                    orcamento.setPartida(rs.getString("p.partida"));
+                    orcamento.setDistino(rs.getString("p.destino"));
+                    orcamento.setDistancia(rs.getString("p.distancia"));
+                    orcamento.setCategoria(rs.getString("p.id_nome_categoria_carreto"));
+                    orcamento.setSituacao(rs.getString("p.situacao"));
+                    orcamento.setData(rs.getString("p.data_pedido"));
+                    orcamento.setValor(rs.getFloat("o.valor"));
+                    orcamento.setDescricao(rs.getString("p.descricao"));
+                    
+                    lista.add(orcamento);
+                }
+            }
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.toString();
+        }
+        return lista;
+    }  
+    
+      
+     
+     
            
            
            

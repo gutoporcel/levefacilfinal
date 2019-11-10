@@ -224,26 +224,8 @@
                             <div class="mws-panel-body"  >
                           
 
-                                <label>N° do Pedido</label>
+                                <label>Código do Pedido</label>
                                 <input type="text" id="id" name="codigo" class=""  />
-
-
-                                
-                                
-                          
-                                
-                                
-                                
-                          <!--     
-                          
-                          //<input type="hidden" id="valor" name="idMotorista" value="<"/>
-                          <select name="situacao" id="situacao" class="selectpicker w100ppc">
-
-                                    <option value="ativo">Ativar</option>
-                                    <option value="Desativado">Desativar</option>                                                                                                             
-                                </select>
-
--->
 
                              <button class="btn" type="button" onclick="ativarOrcamento()" value="inserirOrcamento" /><i class="icol-accept"></i>Aceitar</button>
                             <button class="btn" type="button" onclick="recusaOrcamento()" value="inserirOrcamento" /><i class="icol-delete"></i>Recusar</button>
@@ -359,10 +341,10 @@
                                             out.println("<td>" + lista5.get(i).getDestino()+ "</td>");
                                             out.println("<td>" + lista5.get(i).getDistancia()+ "</td>");
                                             out.println("<td>" + lista5.get(i).getDescricao()+ "</td>");
-                                            out.println("<td>" + lista5.get(i).getSituacao() + "</td>");
+                                            out.println("<td style='color:red'>" + lista5.get(i).getSituacao() + "</td>");
                                             out.println("<td>" + lista5.get(i).getTipoCarreto()+ "</td>");
                                             out.println("<td>" + lista5.get(i).getData()+ "</td>");
-                                            out.println("<td style='color:green'>" + lista5.get(i).getHora()+ "</td>");                                        
+                                            out.println("<td >" + lista5.get(i).getHora()+ "</td>");                                        
                                         
 
                                             //  <td><input class="btn" type="button" onclick="funcao1()" value="Desativar Usuario" /> <input class="btn2" type="button" onclick="funcao2()" value="Ativar Usuário" /></td>

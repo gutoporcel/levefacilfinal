@@ -220,8 +220,7 @@
                             </div>
 							<div class="mws-button-row">
                                         <button type="button" value="alterarSenha" name="btnAltera" class="btn btn-danger" onclick="alterarSenha()" ID="btnConfirmar" >Alterar Senha</button>
-                    			<input type="submit" value="Submit" class="btn btn-danger">
-                    			<input type="reset" value="Reset" class="btn ">
+                    			
                     		</div>
                             
                             

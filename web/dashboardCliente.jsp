@@ -446,7 +446,7 @@
                                     <div class="mws-form-col-8-8">
                                         <label class="mws-form-label">Descrição da Carga:</label>
                                         <div class="mws-form-item">
-                                            <textarea name="descricao" class="big"  type="text"  placeholder="Digite as caracteristcas do produto Exe: nome ,peso,dimensoes    "></textarea>
+                                            <textarea name="descricao" class="big"  type="text"  placeholder="Digite as caracteristicas do produto. Ex: nome, peso, dimensões"></textarea>
                                         </div>
                                     </div>
                                 </div>

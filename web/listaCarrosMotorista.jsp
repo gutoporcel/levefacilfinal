@@ -145,10 +145,10 @@
                                         <th>Marca</th>
                                         <th>Modelo</th>
                                         <th>Cor</th>
-                                        <th>placa</th>
+                                        <th>Placa</th>
                                          <th>Porte</th>
-                                          <th>renavam</th>
-                                           <th>ano</th>
+                                          <th>Renavam</th>
+                                           <th>Ano</th>
                                          
                                     </tr>
                                 </thead>
