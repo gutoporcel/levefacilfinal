@@ -7,7 +7,6 @@ package Controler;
 
 import dao.PedidoOrcamentoDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,34 +28,6 @@ import model.MPedidoOrcamento;
 public class PrincipalCliente extends HttpServlet {
 
  PedidoOrcamentoDao pedidodao = new PedidoOrcamentoDao();
- 
-
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-
-        }
-    }
- 
- 
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-             processRequest(request, response); 
-           RequestDispatcher despachar = request.getRequestDispatcher("dashboardCliente.jsp");
-                    despachar.forward(request, response);
-       
-    }
-
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -68,14 +39,7 @@ public class PrincipalCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
-        
-        try {
-            
-    
-        
+        try {            
             MPedidoOrcamento pe = new MPedidoOrcamento();
             pe.setTipoCarreto(request.getParameter("tipoCarreto"));
             pe.setData(request.getParameter("data"));
@@ -103,7 +67,7 @@ public class PrincipalCliente extends HttpServlet {
        }
        
   
-     } catch (Exception e) {
+     } catch (IOException | NumberFormatException e) {
          
           RequestDispatcher despachar = request.getRequestDispatcher("paginaErro.jsp");
                     despachar.forward(request, response);

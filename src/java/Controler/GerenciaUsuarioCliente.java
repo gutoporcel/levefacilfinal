@@ -8,8 +8,6 @@ package Controler;
 import dao.ClienteDao;
 import dao.MotoristaDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -100,7 +98,7 @@ public class GerenciaUsuarioCliente extends HttpServlet {
             //despachar.forward(request, response);
 
         }
-         } catch (Exception erro) {
+         } catch (IOException | NumberFormatException erro) {
 
             // RequestDispatcher despachar = request.getRequestDispatcher("paginaErro.jsp");
             //     despachar.forward(request, response);

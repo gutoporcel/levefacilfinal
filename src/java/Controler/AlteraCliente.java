@@ -7,7 +7,6 @@ package Controler;
 
 import dao.ClienteDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -85,7 +84,7 @@ public class AlteraCliente extends HttpServlet {
 
             }
 
-        } catch (Exception e) {
+        } catch (IOException | NumberFormatException | ServletException e) {
         }
 
     }

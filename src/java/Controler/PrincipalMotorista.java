@@ -8,7 +8,6 @@ package Controler;
 //import static Controler.PrincipalCliente.calcular;
 import dao.OrcamentoDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -49,46 +48,16 @@ public class PrincipalMotorista extends HttpServlet {
                 orcamentodao.inserirOrcamento(orca);
                 orcamentodao.aceitaPedido(orca);
                   response.sendRedirect("dashboardMotorista.jsp");
-             //RequestDispatcher despachar = request.getRequestDispatcher("dashboardMotorista.jsp");
-              //      despachar.forward(request, response);
-                    
-             
-             
-             
-             
              }
+
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        } catch (Exception erro) {
+        } catch (IOException | NumberFormatException erro) {
 
              RequestDispatcher despachar = request.getRequestDispatcher("paginaErro.jsp");
                  despachar.forward(request, response);
             throw new RuntimeException("Erro7" + erro);
 
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }        
     }
 
     @Override

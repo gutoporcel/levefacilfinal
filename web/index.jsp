@@ -59,7 +59,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <div class="nav-container bgblackmob" style="position: fixed; width: 100%; z-index: 99;">
+    <div class="nav-container bgblackmob" style="  position: relative; width: 100%; z-index: 99;">
         <div>
             <div class="bar bar--sm visible-xs bg-transparent-mob">
                 <div class="container">
@@ -115,7 +115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
 
-    <div class="main-container pt-90 some-mob">
+    <div class="main-container">
 
         <section class="cover height-70 imagebg switchable" data-overlay="8">
             <div class="background-image-holder">
@@ -124,7 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <style>
                 .borda_texto{
                 -webkit-text-stroke-width: 2px;
-                -webkit-text-stroke-color: #000;
+                -webkit-text-stroke-color: #0000;
                 font-size: 3em; color: #fffdd9;
                 }
             </style>

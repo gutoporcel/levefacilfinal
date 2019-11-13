@@ -318,8 +318,8 @@
                                                                                                                                     <div class="col-md-12 col-xs-12" align="center">
 
                                                                                                                                         <br>
-                                                                                                                                            <% String mensagem2 = (String) request.getAttribute("mensagemE");%>
-                                                                                                                                            <% if (mensagem2 != null) {%>
+                                                                                                                                            <% String mensagem2 = (String) request.getAttribute("mensagemE");
+                                                                                                                                             if (mensagem2 != null) {%>
                                                                                                                                             <div class="alert alert-danger" role="alert" t>
                                                                                                                                                 <%= mensagem2%>
                                                                                                                                             </div> 

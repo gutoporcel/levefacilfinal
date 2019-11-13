@@ -7,13 +7,11 @@ package Controler;
 
 import dao.CartaoDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Login;
 import model.Mcartao;
 
 /**
@@ -79,7 +77,7 @@ public class Cartao extends HttpServlet {
        cartao1.setId_cartao(Integer.parseInt(idCartao));
        
             
-             if(cartaoDao.alteraCartao(cartao1)== "OK"){
+             if(  "OK".equals(cartaoDao.alteraCartao(cartao1))){
                  
              }
             response.sendRedirect("listaCartoesCliente.jsp");
@@ -91,7 +89,7 @@ public class Cartao extends HttpServlet {
         
         
         
-         } catch (Exception erro) {
+         } catch (IOException | NumberFormatException erro) {
 
              RequestDispatcher despachar = request.getRequestDispatcher("paginaErro.jsp");
                  despachar.forward(request, response);

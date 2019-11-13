@@ -7,8 +7,6 @@ package Controler;
 
 import dao.OrcamentoDao;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -48,7 +46,7 @@ public class Orcamento extends HttpServlet {
                   
                   
                 
-                 if (orcamentodao.pedidoAguardandoPagamento(moto)== "OK"){
+                 if ("OK".equals(orcamentodao.pedidoAguardandoPagamento(moto))){
                      
     
                      
@@ -61,20 +59,20 @@ public class Orcamento extends HttpServlet {
 
         }else if(request.getParameter("acao").equalsIgnoreCase("recusar")){
             
-            if (orcamentodao.recusarPedido(moto)== "OK"){
+            if ("OK".equals(orcamentodao.recusarPedido(moto))){
             response.sendRedirect("listaSolicitacoesCliente.jsp");
             }
             
             
         }else if(request.getParameter("acao").equalsIgnoreCase("pagar")){
-           if (orcamentodao.finalizaPagamento(moto)== "OK"){
+           if ("OK".equals(orcamentodao.finalizaPagamento(moto))){
           response.sendRedirect("listaSolicitacoesCliente.jsp");
             
            }
             
             
         }else if(request.getParameter("acao").equalsIgnoreCase("entregaPAgamento")){
-            if (orcamentodao.pedidoEntregue(moto)== "OK"){
+            if ("OK".equals(orcamentodao.pedidoEntregue(moto))){
             response.sendRedirect("dashboardMotorista.jsp");
             }
             
@@ -84,7 +82,7 @@ public class Orcamento extends HttpServlet {
    
         
         
-          } catch (Exception e) {
+          } catch (IOException | NumberFormatException e) {
               
                response.sendRedirect("paginaErro.jsp");
               

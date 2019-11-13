@@ -86,7 +86,7 @@ public class CartaoDao {
          
              public String alteraCartao(Mcartao cartao) {
         
-        String resp = "";
+        String resp;
         try {
              conn = ConnectionFactory.getConnection();
            String sql = "update tb_cartao set nome_cartao =?, bandeira = ?,codigo_seguranca = ?, numero_cartao = ?,validade =? where id_cliente = ?  and id_cartao = ?; " ;

@@ -22,7 +22,8 @@ public class ConnectionFactory {
         try {
             
             Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/db_leve_facil?useTimezone=true&serverTimezone=UTC","root", "porcel1910");
+           // return DriverManager.getConnection("jdbc:mysql://localhost:3306/db_leve_facil?useTimezone=true&serverTimezone=UTC","root", "porcel1910");
+           return DriverManager.getConnection("jdbc:mysql://db-leve-facil.mysql.uhserver.com/db_leve_facil?useTimezone=true&serverTimezone=UTC","levefacil", "Porcel@1910");
            
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);

@@ -7,12 +7,10 @@ package Controler;
 
 import dao.ContaBancariaMotoristaDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.MCategoriaCarreto;
 import model.McontaBancariaMotorista;
 
 /**
@@ -76,7 +74,7 @@ public class ContaBancariaMotorista extends HttpServlet {
              conta1.setIdMotorista(id_motorista);
             conta1.setIdContaBancaria(id_conta);  
                    
-           if( contabancariadao.alteraConta(conta1)=="OK"){}
+           if(              "OK".equals(contabancariadao.alteraConta(conta1))){}
             response.sendRedirect("listaCartoesMotorista.jsp");
             
             

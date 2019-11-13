@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Login;
-import org.apache.catalina.ant.SessionsTask;
-import sun.security.pkcs11.wrapper.Functions;
 
 /**
  *
@@ -93,22 +92,12 @@ public class logar extends HttpServlet {
          
 
                     HttpSession session = request.getSession();
-                    //session.setAttribute("id", l.getId_usuario());
                     session.setAttribute("usuario",user);
                     response.sendRedirect("dashboardAdmin.jsp");
                     
                    
 
                 } else if (validaLoginCliente(l) == true && validaLoginMotorista(l) == true) {
-                   // Login objeto =  new Login(nome, Senha, nome, 0);
-                    /* 
-                     private String username;
-    private String Senha;
-    private String nome; 
-    private int id_usuario*/
-                    
-                    
-                    
                     
                     String nome = l.getNome();
                     String cpf = l.getUsername();
@@ -120,7 +109,6 @@ public class logar extends HttpServlet {
          
 
                     HttpSession session = request.getSession();
-                    //session.setAttribute("id", l.getId_usuario());
                     session.setAttribute("usuario",user);
                     response.sendRedirect("selectPerfil.jsp");
 
@@ -135,7 +123,6 @@ public class logar extends HttpServlet {
          
 
                     HttpSession session = request.getSession();
-                    //session.setAttribute("id", l.getId_usuario());
                     session.setAttribute("usuario",user);
                     response.sendRedirect("dashboardMotorista.jsp");
 
@@ -163,7 +150,7 @@ public class logar extends HttpServlet {
                 }
             }
 
-        } catch (Exception e) {
+        } catch (IOException | ServletException e) {
 
         }
 
@@ -174,7 +161,7 @@ public class logar extends HttpServlet {
         try {
 
             String sql = "SELECT nome, id_motorista, cpf, senha  FROM tb_motorista where cpf =? and senha =? and situacao =?;";
-            conn = new ConnectionFactory().getConnection();
+            conn = ConnectionFactory.getConnection();
             stmt = conn.prepareStatement(sql);
 
             stmt.setString(1, login.getUsername());
@@ -193,8 +180,8 @@ public class logar extends HttpServlet {
             }
             stmt.close();
             conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            
         }
         return achou;
 
@@ -206,7 +193,7 @@ public class logar extends HttpServlet {
         try {
 
             String sql = "SELECT nome, id_cliente, cpf, senha  FROM tb_cliente where cpf =? and senha =? and situacao =?; ";
-            conn = new ConnectionFactory().getConnection();
+            conn = ConnectionFactory.getConnection();
             stmt = conn.prepareStatement(sql);
 
             stmt.setString(1, login.getUsername());
@@ -225,8 +212,7 @@ public class logar extends HttpServlet {
             }
             stmt.close();
             conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return achou;
     }
@@ -237,7 +223,7 @@ public class logar extends HttpServlet {
         try {
 
             String sql = "SELECT nome, id_administrador, cpf, senha  FROM tb_administrador where cpf =? and senha =? ; ";
-            conn = new ConnectionFactory().getConnection();
+            conn = ConnectionFactory.getConnection();
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, login.getUsername());
             stmt.setString(2, login.getSenha());
@@ -254,8 +240,7 @@ public class logar extends HttpServlet {
             }
             stmt.close();
             conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return achou;
 
