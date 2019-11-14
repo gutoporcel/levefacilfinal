@@ -22,7 +22,7 @@ import model.OrcamentoMotorista;
 public class PrincipalMotorista extends HttpServlet {
     
     
-    OrcamentoDao orcamentodao = new OrcamentoDao();
+   
 
 
     @Override
@@ -36,6 +36,7 @@ public class PrincipalMotorista extends HttpServlet {
            
             throws ServletException, IOException {
         try {
+             OrcamentoDao orcamentodao = new OrcamentoDao();
             OrcamentoMotorista orca = new OrcamentoMotorista();
             orca.setValor(Float.parseFloat(request.getParameter("valor")));
             orca.setId_motorista(Integer.parseInt(request.getParameter("idMotorista")));

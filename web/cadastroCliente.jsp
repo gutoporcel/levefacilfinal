@@ -320,15 +320,16 @@
                                                                                                                                         <br>
                                                                                                                                             <% String mensagem2 = (String) request.getAttribute("mensagemE");
                                                                                                                                              if (mensagem2 != null) {%>
-                                                                                                                                            <div class="alert alert-danger" role="alert" t>
+                                                                                                                                            <div class="alert alert-danger" role="alert">
                                                                                                                                                 <%= mensagem2%>
                                                                                                                                             </div> 
                                                                                                                                             <% }%> 
+                                                                                                                                                 <div class="clearfix"></div>
+                                                                                                                                    </div>        
+                                                                                                                                        <div class="col-md-12 col-xs-12" align="center">
 
-
-
-                                                                                                                                            <% String mensagem = (String) request.getAttribute("mensagem");%>
-                                                                                                                                            <% if (mensagem != null) {%>
+                                                                                                                                            <% String mensagem = (String) request.getAttribute("mensagem");
+                                                                                                                                            if (mensagem != null) {%>
                                                                                                                                             <div class="alert alert-success" role="alert">
                                                                                                                                                 <%= mensagem%>
                                                                                                                                             </div> 
@@ -357,26 +358,10 @@
 
                                                                                                                         <div class="col-md-12 padding">
 
-
-
-
-
-
-
-
-
-
                                                                                                                             <div class="col-md-6 col-xs-12b "  >
                                                                                                                                 <label>Nome Completo</label>
                                                                                                                                 <input type="text" id="nome" name="nome"  />
                                                                                                                             </div>
-
-
-
-
-
-
-
                                                                                                                             <div class="col-md-3 col-xs-12">
                                                                                                                                 <label>Número do RG</label>
                                                                                                                                 <input type="text" id="rg" name="rg" maxlength="12" onkeydown="mascara(this, mRG)" />
@@ -489,35 +474,7 @@
                                                                                                                             <button type="button" value="cadastrar" name="btnCadastrar" class="button btn-confirmacao" onclick="Cadastrar()" ID="btnConfirmar" >CADASTRAR</button>
                                                                                                                             <input type="hidden" name="acao">
 
-                                                                                                                                <div class="col-md-12 col-xs-12" align="center">
-
-                                                                                                                                    <br>
-                                                                                                                                        <% String mensagem3 = (String) request.getAttribute("mensagemA");%>
-                                                                                                                                        <% if (mensagem3 != null) {%>
-                                                                                                                                        <div class="alert alert-success" role="alert" t>
-                                                                                                                                            <%= mensagem3%>
-                                                                                                                                        </div> 
-                                                                                                                                        <% }%> 
-
-
-
-                                                                                                                                        <% String mensagem4 = (String) request.getAttribute("mensagemB");%>
-                                                                                                                                        <% if (mensagem4 != null) {%>
-                                                                                                                                        <div class="alert alert-danger" role="alert">
-                                                                                                                                            <%= mensagem4%>
-                                                                                                                                        </div> 
-                                                                                                                                        <% }%>
-                                                                                                                                        <div class="clearfix"></div>
-                                                                                                                                </div>     
-
-
-
-
-
-
-
-                                                                                                                                <br>
-                                                                                                                                    </div>
+                                                 
 
                                                                                                                                     <div class="clearfix mt-50 mb-50"></div>
 

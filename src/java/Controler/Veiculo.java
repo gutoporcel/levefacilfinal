@@ -20,7 +20,7 @@ import model.Mveiculo;
 public class Veiculo extends HttpServlet {
 
   
-   VeiculoDao  veiculodao = new VeiculoDao();
+   
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -56,6 +56,7 @@ public class Veiculo extends HttpServlet {
         
           
         try {
+            VeiculoDao  veiculodao = new VeiculoDao();
             
             String modelo = request.getParameter("modelo");
             String marca = request.getParameter("marca");

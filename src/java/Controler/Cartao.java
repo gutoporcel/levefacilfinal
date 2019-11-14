@@ -21,7 +21,7 @@ import model.Mcartao;
 public class Cartao extends HttpServlet {
 
 
-    CartaoDao cartaoDao = new CartaoDao();
+   
    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,7 +35,7 @@ public class Cartao extends HttpServlet {
             throws ServletException, IOException {
         
      try{   
-        
+         CartaoDao cartaoDao = new CartaoDao();
        String nomeCartao = request.getParameter("nomecartao");
        String numeroCartao = request.getParameter("numerocartao");
        String bandeira = request.getParameter("bandeira");

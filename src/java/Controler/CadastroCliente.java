@@ -22,7 +22,7 @@ import model.MCliente;
 public class CadastroCliente extends HttpServlet {
     
     
-    ClienteDao clienteDao = new ClienteDao();
+    
     
  
     @Override
@@ -44,7 +44,8 @@ public class CadastroCliente extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-
+            ClienteDao clienteDao = new ClienteDao();
+            
             MCliente c = new MCliente();
             c.setPesquisaCpf(request.getParameter("cpf"));
             c.setNomeCliente(request.getParameter("nome"));
@@ -67,22 +68,22 @@ public class CadastroCliente extends HttpServlet {
             if (request.getParameter("acao").equalsIgnoreCase("cadastrar")) {
 
                 if (clienteDao.validaFormCadastro(c)) {
-                    
-                    
-                    
-                    request.setAttribute("mensagemE", "Dados já cadastrados em nosso sistema.");
+
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
+                    request.setAttribute("mensagemE", "Dados já cadastrados em nosso sistema.");
                     despachar.forward(request, response);
 
                 }else if (clienteDao.inserirClinte(c)) {
-                    request.setAttribute("mensagem", "Você foi cadastrado com sucesso!");
+                    
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
+                    request.setAttribute("mensagem", "Você foi cadastrado com sucesso!");
                     despachar.forward(request, response);
                     
 
                 } else {
                     request.setAttribute("mensagemE", "Algo deu errado. Tente de novo.");
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
+                    
                     despachar.forward(request, response);
 
                 }
@@ -90,20 +91,16 @@ public class CadastroCliente extends HttpServlet {
             } else if (request.getParameter("acao").equalsIgnoreCase("verifica")) {
 
                 if (clienteDao.verificaCad(c)) {
-                    
-                   
-                            
                     request.setAttribute("mensagem", "Você já possui cadastro.");
-                    RequestDispatcher despachar = request.getRequestDispatcher("/cadastroCliente.jsp");
+                    RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
                     despachar.forward(request, response);
                     //out.println("voce ja possui cadastro");
-                    response.sendRedirect("cadastroCliente.jsp");
-                   
                 }
              
                 
+                
+                RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
                 request.setAttribute("mensagemE", "Você não possui cadastro.");
-                RequestDispatcher despachar = request.getRequestDispatcher("/cadastroCliente.jsp");
                 despachar.forward(request, response);
                 
 

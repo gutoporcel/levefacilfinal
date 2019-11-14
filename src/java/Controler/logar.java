@@ -5,13 +5,11 @@
  */
 package Controler;
 
-import dao.ConnectionFactory;
+import dao.LogarDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -72,15 +70,16 @@ public class logar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+      
 
         try {
-
+  LogarDao logardao = new LogarDao();
             Login l = new Login();
             l.setUsername(request.getParameter("username"));
             l.setSenha(request.getParameter("password"));
             if (request.getParameter("acao").equalsIgnoreCase("logar")) {
 // login administrador
-                if (validaLoginAdmin(l)) {
+                if (logardao.validaLoginAdmin(l)) {
 
                    String nome = l.getNome();
                     String cpf = l.getUsername();
@@ -97,7 +96,7 @@ public class logar extends HttpServlet {
                     
                    
 
-                } else if (validaLoginCliente(l) == true && validaLoginMotorista(l) == true) {
+                } else if (logardao.validaLoginCliente(l) == true && logardao.validaLoginMotorista(l) == true) {
                     
                     String nome = l.getNome();
                     String cpf = l.getUsername();
@@ -112,7 +111,7 @@ public class logar extends HttpServlet {
                     session.setAttribute("usuario",user);
                     response.sendRedirect("selectPerfil.jsp");
 
-                } else if (validaLoginMotorista(l)) {
+                } else if (logardao.validaLoginMotorista(l)) {
                       String nome = l.getNome();
                     String cpf = l.getUsername();
                     String senha =  l.getSenha();
@@ -126,7 +125,7 @@ public class logar extends HttpServlet {
                     session.setAttribute("usuario",user);
                     response.sendRedirect("dashboardMotorista.jsp");
 
-                } else if (validaLoginCliente(l)) {
+                } else if (logardao.validaLoginCliente(l)) {
 
                     String nome = l.getNome();
                     String cpf = l.getUsername();
@@ -151,101 +150,12 @@ public class logar extends HttpServlet {
             }
 
         } catch (IOException | ServletException e) {
-
-        }
-
-    }
-
-    public boolean validaLoginMotorista(Login login) {
-        boolean achou = false;
-        try {
-
-            String sql = "SELECT nome, id_motorista, cpf, senha  FROM tb_motorista where cpf =? and senha =? and situacao =?;";
-            conn = ConnectionFactory.getConnection();
-            stmt = conn.prepareStatement(sql);
-
-            stmt.setString(1, login.getUsername());
-            stmt.setString(2, login.getSenha());
-            stmt.setString(3, "ativo");
-
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                login.setNome(rs.getString("nome"));
-                login.setId_usuario(rs.getInt("id_motorista"));
-                login.setUsername(rs.getString("cpf"));
-                 login.setSenha(rs.getString("senha"));
-
-                achou = true;
-
-            }
-            stmt.close();
-            conn.close();
-        } catch (SQLException e) {
             
+             response.sendRedirect("paginaErro.jsp");
+
         }
-        return achou;
 
     }
-
-    public boolean validaLoginCliente(Login login) {
-
-        boolean achou = false;
-        try {
-
-            String sql = "SELECT nome, id_cliente, cpf, senha  FROM tb_cliente where cpf =? and senha =? and situacao =?; ";
-            conn = ConnectionFactory.getConnection();
-            stmt = conn.prepareStatement(sql);
-
-            stmt.setString(1, login.getUsername());
-            stmt.setString(2, login.getSenha());
-            stmt.setString(3, "ativo");
-
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                login.setNome(rs.getString("nome"));
-                login.setId_usuario(rs.getInt("id_cliente"));
-                login.setUsername(rs.getString("cpf"));
-                login.setSenha(rs.getString("senha"));
-
-                achou = true;
-
-            }
-            stmt.close();
-            conn.close();
-        } catch (SQLException e) {
-        }
-        return achou;
-    }
-
-    public boolean validaLoginAdmin(Login login) {
-
-        boolean achou = false;
-        try {
-
-            String sql = "SELECT nome, id_administrador, cpf, senha  FROM tb_administrador where cpf =? and senha =? ; ";
-            conn = ConnectionFactory.getConnection();
-            stmt = conn.prepareStatement(sql);
-            stmt.setString(1, login.getUsername());
-            stmt.setString(2, login.getSenha());
-
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                 login.setNome(rs.getString("nome"));
-                login.setId_usuario(rs.getInt("id_administrador"));
-                login.setUsername(rs.getString("cpf"));
-                 login.setSenha(rs.getString("senha"));
-
-                achou = true;
-
-            }
-            stmt.close();
-            conn.close();
-        } catch (SQLException e) {
-        }
-        return achou;
-
-    }
-
     /**
      * Returns a short description of the servlet.
      *

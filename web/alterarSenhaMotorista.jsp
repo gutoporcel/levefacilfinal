@@ -165,7 +165,7 @@
                     </div>
                      <div class="mws-panel-body no-padding">
                         <form class="mws-form" name="formAlteraSenhaMotorista" action="AlteraMotorista" method="post">
-                                                      <div class="col-md-12 col-xs-12" align="center">
+                     <div class="col-md-12 col-xs-12" align="center">
                         <br>
                           <% String mensagem2 = (String) request.getAttribute("mensagemE");%>
                           <% if (mensagem2 != null) {%>
@@ -173,8 +173,7 @@
                           <%= mensagem2%>
                           </div> 
                           <% }%> 
-
-                                                      </div>
+                     </div>
 
                                                                    
                             

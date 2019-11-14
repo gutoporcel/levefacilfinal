@@ -27,7 +27,7 @@ import model.MPedidoOrcamento;
  */
 public class PrincipalCliente extends HttpServlet {
 
- PedidoOrcamentoDao pedidodao = new PedidoOrcamentoDao();
+ 
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -39,7 +39,9 @@ public class PrincipalCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {            
+        try {         
+            PedidoOrcamentoDao pedidodao = new PedidoOrcamentoDao();
+            
             MPedidoOrcamento pe = new MPedidoOrcamento();
             pe.setTipoCarreto(request.getParameter("tipoCarreto"));
             pe.setData(request.getParameter("data"));

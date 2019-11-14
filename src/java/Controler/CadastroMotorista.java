@@ -99,83 +99,9 @@ public class CadastroMotorista extends HttpServlet {
             throw new RuntimeException("Erro7" + erro);
 
        }                                                                                   
-             
-      /*
-        private String numero_cnh;
-    private String validade_cnh;
-    private String categoria_cnh;
-        */
+
     }
-    /*
-      public boolean verificaCad(MMotorista motorista) {
-        boolean achou = false;
-        try {
-
-            String sql = "SELECT cpf FROM tb_motorista where cpf = ?";
-            conn = new ConnectionFactory().getConnection();
-            stmt = conn.prepareStatement(sql);
-
-            stmt.setString(1, motorista.getPesquisaCpf());
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                achou = true;
-            }
-            stmt.close();
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return achou;
-    }
-    
-    private boolean inserirMotorisa(MMotorista motorista) {
-        boolean cada = false;
-        String sql = "INSERT INTO tb_motorista(nome,data_nacimento,email,cpf,logradouro,complemento,bairro,cep,cidade,estado,numero_casa,numero_rg,telefone,celular,senha,numero_cnh,data_validade_cnh,categoria_cnh) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)  ";
-        try {
-            conn = new ConnectionFactory().getConnection();
-
-            stmt = conn.prepareStatement(sql);
-
-            stmt.setString(1, motorista.getNome());  //  nome           
-            stmt.setString(2, motorista.getData_nac());//date
-            stmt.setString(3, motorista.getEmail());//email
-            stmt.setString(4, motorista.getCpf());//cpf
-            stmt.setString(5, motorista.getLogradouro());//endereco
-            stmt.setString(6, motorista.getComplemento()); //comple
-            stmt.setString(7, motorista.getBairro());//bairro
-            stmt.setString(8, motorista.getCep());//cep
-            stmt.setString(9, motorista.getCidade());//cidade
-            stmt.setString(10, motorista.getEstado()); //estado selected
-            stmt.setString(11, motorista.getNumero());//numero casa
-            stmt.setString(12, motorista.getNumero_rg());////numero rg
-            stmt.setString(13, motorista.getTelefone());//tell
-            stmt.setString(14, motorista.getCelular());//cell
-            stmt.setString(15, motorista.getSenha());//senha  
-            stmt.setString(16, motorista.getNumero_cnh());// numero cnh
-            stmt.setString(17, motorista.getValidade_cnh());//validade cnh
-            stmt.setString(18, motorista.getCategoria_cnh());// categoria
-            
-            stmt.execute();
-            stmt.close();
-            cada = true;
-        } catch (Exception erro) {
-            throw new RuntimeException("Erro2: " + erro);
-        }
-        return cada;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    */
-    
-    
-    
-    
+ 
     
         @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

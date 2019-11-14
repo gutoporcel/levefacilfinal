@@ -20,7 +20,6 @@ import model.MCliente;
  */
 public class AlteraCliente extends HttpServlet {
 
-    ClienteDao clienteDao = new ClienteDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,6 +31,9 @@ public class AlteraCliente extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+                ClienteDao clienteDao = new ClienteDao();
+
+            
             MCliente c = new MCliente();
 
             c.setNomeCliente(request.getParameter("nome"));

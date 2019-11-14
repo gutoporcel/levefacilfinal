@@ -299,38 +299,25 @@
                                       <div class="col-md-12 col-xs-12" align="center">
 
                                           <br>
-                                             <% String mensagem2 = (String) request.getAttribute("mensagemE");%>
-                                             <% if (mensagem2 != null) {%>
-                                                                                                                                            <div class="alert alert-danger" role="alert" t>
-                                                                                                                                                <%= mensagem2%>
-                                                                                                                                            </div> 
-                                                                                                                                            <% }%> 
-
-
-
-                                                                                                                                            <% String mensagem = (String) request.getAttribute("mensagem");%>
-                                                                                                                                            <% if (mensagem != null) {%>
-                                                                                                                                            <div class="alert alert-success" role="alert">
-                                                                                                                                                <%= mensagem%>
-                                                                                                                                            </div> 
-                                                                                                                                            <% }%>
-                                                                                                                                            <div class="clearfix"></div>
-                                                                                                                                    </div>     
-                                                                                                                                    <div class="clearfix"></div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-
-                                                                                                                                        
-                                                                                    
+                                             <% String mensagem2 = (String) request.getAttribute("mensagemE");
+                                              if (mensagem2 != null) {%>
+                                             <div class="alert alert-danger" role="alert" t>
+                                                <%= mensagem2%>
+                                             </div> 
+                                            <% }%> 
+                                           <div class="clearfix"></div>
+                                      </div>   
+                                        <div class="col-md-12 col-xs-12" align="center">
+                                            
+                                         <% String mensagem = (String) request.getAttribute("mensagem");
+                                       if (mensagem != null) {%>
+                                         <div class="alert alert-success" role="alert">
+                                       <%= mensagem%>
+                                       </div> 
+                                      <% }%>
+                                      <div class="clearfix"></div>
+                                      </div>     
+                                      <div class="clearfix"></div>                                                         
                      </div>     
                         <div class="col-md-4 col-xs-12"></div>
 
@@ -492,34 +479,6 @@
                         <input type="hidden" name="acao">
                         
                     </div>
-                        <div class="col-md-12 col-xs-12" align="center">
-
-                                                                                                                                            <br>
-                                                                                                                                                <% String mensagem3 = (String) request.getAttribute("mensagemA");%>
-                                                                                                                                                <% if (mensagem3 != null) {%>
-                                                                                                                                                <div class="alert alert-success" role="alert" t>
-                                                                                                                                                    <%= mensagem3%>
-                                                                                                                                                </div> 
-                                                                                                                                                <% }%> 
-
-
-
-                                                                                                                                                <% String mensagem4 = (String) request.getAttribute("mensagemB");%>
-                                                                                                                                                <% if (mensagem4 != null) {%>
-                                                                                                                                                <div class="alert alert-danger" role="alert">
-                                                                                                                                                    <%= mensagem4%>
-                                                                                                                                                </div> 
-                                                                                                                                                <% }%>
-                                                                                                                                                <div class="clearfix"></div>
-                                                                                                                                        </div>     
-
-
-
-
-
-
-                    
-
                     <div class="clearfix mt-50 mb-50"></div>
 
                 </div>

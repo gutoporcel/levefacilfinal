@@ -19,8 +19,7 @@ import model.McontaBancariaMotorista;
  */
 public class ContaBancariaMotorista extends HttpServlet {
 
-    ContaBancariaMotoristaDao contabancariadao = new   ContaBancariaMotoristaDao();
-
+    
     
 
 
@@ -36,6 +35,8 @@ public class ContaBancariaMotorista extends HttpServlet {
             throws ServletException, IOException {
         
         try {
+            ContaBancariaMotoristaDao contabancariadao = new   ContaBancariaMotoristaDao();
+
             String titular = request.getParameter("titular");
             String banco = request.getParameter("banco");
             String tipo = request.getParameter("tipoConta");

@@ -20,7 +20,7 @@ import model.MMotorista;
  */
 public class AlteraMotorista extends HttpServlet {
 
-    MotoristaDAO motoristadao = new MotoristaDAO();
+   
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,6 +35,7 @@ public class AlteraMotorista extends HttpServlet {
    
         
         try {
+             MotoristaDAO motoristadao = new MotoristaDAO();
             MMotorista m =  new MMotorista();
             m.setNome(request.getParameter("nome"));
             m.setNumero_rg(request.getParameter("rg"));

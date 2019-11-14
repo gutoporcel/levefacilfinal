@@ -7,7 +7,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.CategoriaCarretoDao"%>
 <%@page import="model.MCategoriaCarreto"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%//@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="sessaocliente.jsp" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
