@@ -2,59 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
      
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
-
-    <meta charset="utf-8">
-    <title>Cadastro - Leve Fácil</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="canonical" href="contato.html" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <meta name="description" content="Leve Fácil!">
-    <meta name="author" content="Guilherme - Grupo 3 | Leve Fácil" />
-
-    <link rel="shortcut icon" href="img/favicon.png" sizes="32x32 48x48 64x64 128x128" />
-    <link href="css1/stack-interface.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css1/socicon.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/theme-cedar.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/custom.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/stylemob.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css1/p-m.css" rel="stylesheet" type="text/css" media="all" />
-
-    <link rel="stylesheet" type="text/css" href="css1/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css1/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css1/component.css" />
-
    
-    <link href="css1/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
-
-    <style>
-        a.m-pecaoseu {
-            font-weight: 600 !important;
-            border-bottom-color: #fff !important;
-        }
-    </style>
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-    w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-        new Date().getTime(), event: 'gtm.js'
-    }); var f = d.getElementsByTagName(s)[0],
-    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-})(window, document, 'script', 'dataLayer', 'GTM-KB35TR2');
-
-    
+   <script>
      function Cadastrar() {
                      if (validarCadastroM()) {
                          document.cadMoto.acao.value = 'CADASTRAR';
@@ -199,15 +148,99 @@
     
     
     
+             
+                                            
     
     
     
     
     
     </script>
+    
+    
+    
+      <% String mensagem2 = (String) request.getAttribute("mensagemE");
+                                              if (mensagem2 != null) {%>
+                                           
+                                               
+                                                  <script>
+                                                     
+                                                     alert("<%= mensagem2 %>");
+                                                       window.location="cadastroMotorista.jsp";
+                                                 </script> 
+                                         
+                                            <% }%> 
+                                            
+                                                         
+                                         <% String mensagem = (String) request.getAttribute("mensagem");
+                                       if (mensagem != null) {%>  
+                                              <script>
+                                                     
+                                                     alert("<%= mensagem %>");
+                                                    window.location="cadastroMotorista.jsp";
+                                                     
+                                             </script>
+                                   
+                                      <% }%>
+                                            
     <!-- End Google Tag Manager -->
 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
 
+    <meta charset="utf-8">
+    <title>Cadastro - Leve Fácil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="contato.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="description" content="Leve Fácil!">
+    <meta name="author" content="Guilherme - Grupo 3 | Leve Fácil" />
+
+    <link rel="shortcut icon" href="img/favicon.png" sizes="32x32 48x48 64x64 128x128" />
+    <link href="css1/stack-interface.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css1/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/theme-cedar.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/stylemob.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css1/p-m.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link rel="stylesheet" type="text/css" href="css1/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css1/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css1/component.css" />
+
+   
+    <link href="css1/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+<!--
+    <style>
+        a.m-pecaoseu {
+            font-weight: 600 !important;
+            border-bottom-color: #fff !important;
+        }
+    </style>
+
+    <!-- Google Tag Manager 
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-KB35TR2');
+
+    
+    
+    
+-->
 </head>
 <body data-smooth-scroll-offset="77">
 
@@ -294,31 +327,7 @@
                            <!-- <button ID="btnCPFok" Text="OK" class="btnCPFok" runat="server" OnClick="btnCPFok_Click">OK</button> -->
                             <button ID="btnCPFok" type="button" Text="OK" class="btnCPFok" OnClick="verificarCadastro()" value="verificar"> OK</button>
                             <div class="col-md-4 col-xs-12"></div>
-                        
-                        <div class="col-md-12 col-xs-12" align="center">
-                                      <div class="col-md-12 col-xs-12" align="center">
-
-                                          <br>
-                                             <% String mensagem2 = (String) request.getAttribute("mensagemE");
-                                              if (mensagem2 != null) {%>
-                                             <div class="alert alert-danger" role="alert" t>
-                                                <%= mensagem2%>
-                                             </div> 
-                                            <% }%> 
-                                           <div class="clearfix"></div>
-                                      </div>   
-                                        <div class="col-md-12 col-xs-12" align="center">
-                                            
-                                         <% String mensagem = (String) request.getAttribute("mensagem");
-                                       if (mensagem != null) {%>
-                                         <div class="alert alert-success" role="alert">
-                                       <%= mensagem%>
-                                       </div> 
-                                      <% }%>
-                                      <div class="clearfix"></div>
-                                      </div>     
-                                      <div class="clearfix"></div>                                                         
-                     </div>     
+                     
                         <div class="col-md-4 col-xs-12"></div>
 
                     </div>
@@ -331,7 +340,7 @@
 
                 <div class="container formularios pt-80 pt-30-mob">
 
-                    <hr />
+                    
 
 
                     <h2 class="mt-80 mt-40-mob">Ou faça agora seu cadastro</h2>
@@ -507,14 +516,14 @@
     </footer>
 
     </div>
-    
+    <!--
     <div id="interrogacaocartao1" onclick="fechaInfo()"><span>
         <img src="img/popup_cartao1.png"><a class='a-voltar'>X</a></span></div>
     <div id="interrogacaocartao2" onclick="fechaInfo()"><span>
         <img src="img/popup_cartao2.png"><a class='a-voltar'>X</a></span></div>
     <div id="interrogacaoiccid" onclick="fechaInfo()"><span>
         <img src="img/popup_iccid.png"><a class='a-voltar'>X</a></span></div>
-
+-->
 
     <script src="js1/jquery-3.1.1.min.js"></script>
     <script src="js1/parallax.js"></script>
@@ -530,7 +539,6 @@
         function tela3() { $('#item1').hide(); $('#item2').hide(); $('#item3').show(); $('#item4').hide(); }
         function tela4() { $('#item1').hide(); $('#item2').hide(); $('#item3').hide(); $('#item4').show(); }
     </script>
-
     <script src="js1/maischip.js"></script>
     <script src="js1/validacoes.js"></script>
     <script src="js1/popup-mobile.js"></script>

@@ -99,8 +99,8 @@ public class ClienteDao {
         return lista;
     }
     //Busca por cpf  para ver se tem cadastro
-    public boolean verificaCad(MCliente cliente) {
-        boolean achou = false;
+    public String verificaCad(MCliente cliente) {
+        String resp = ""; 
         try {
 
             String sql = "SELECT cpf FROM tb_cliente where cpf = ?";
@@ -110,7 +110,7 @@ public class ClienteDao {
             stmt.setString(1, cliente.getPesquisaCpf());
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                achou = true;
+                resp = "OK";
             }
             stmt.close();
             conn.close();
@@ -118,7 +118,7 @@ public class ClienteDao {
              e.toString();
             
         }
-        return achou;
+        return resp;
     }
 
     public boolean validaFormCadastro(MCliente cliente) {

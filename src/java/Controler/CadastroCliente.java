@@ -5,9 +5,10 @@
  */
 package Controler;
 
-//import dao.ClienteDao;
+
 import dao.ClienteDao;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +29,6 @@ public class CadastroCliente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
     }
 
     /**
@@ -47,7 +47,7 @@ public class CadastroCliente extends HttpServlet {
             ClienteDao clienteDao = new ClienteDao();
             
             MCliente c = new MCliente();
-            c.setPesquisaCpf(request.getParameter("cpf"));
+            
             c.setNomeCliente(request.getParameter("nome"));
             c.setNumeroRgCliente(request.getParameter("rg"));
             c.setCpfCliente(request.getParameter("cpfc"));
@@ -68,51 +68,39 @@ public class CadastroCliente extends HttpServlet {
             if (request.getParameter("acao").equalsIgnoreCase("cadastrar")) {
 
                 if (clienteDao.validaFormCadastro(c)) {
-
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
                     request.setAttribute("mensagemE", "Dados já cadastrados em nosso sistema.");
                     despachar.forward(request, response);
 
                 }else if (clienteDao.inserirClinte(c)) {
-                    
-                    RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
                     request.setAttribute("mensagem", "Você foi cadastrado com sucesso!");
-                    despachar.forward(request, response);
-                    
-
-                } else {
-                    request.setAttribute("mensagemE", "Algo deu errado. Tente de novo.");
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
-                    
                     despachar.forward(request, response);
-
-                }
-
+                } 
             } else if (request.getParameter("acao").equalsIgnoreCase("verifica")) {
-
-                if (clienteDao.verificaCad(c)) {
+                    MCliente c1 = new MCliente();
+                    c1.setPesquisaCpf(request.getParameter("cpf"));
+                    
+                if ("OK".equals(clienteDao.verificaCad(c1))) {
                     request.setAttribute("mensagem", "Você já possui cadastro.");
-                    RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
-                    despachar.forward(request, response);
-                    //out.println("voce ja possui cadastro");
-                }
-             
-                
-                
+                    
+                   RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
+                   despachar.forward(request, response);
+                   
+                  
+                  // response.sendRedirect("cadastroCliente.jsp");
+                }else{
                 RequestDispatcher despachar = request.getRequestDispatcher("cadastroCliente.jsp");
                 request.setAttribute("mensagemE", "Você não possui cadastro.");
                 despachar.forward(request, response);
                 
+                } 
 
-                //response.sendRedirect("cadastroCliente.jsp");
+
             }
-            response.sendRedirect("cadastroCliente.jsp");
+           // response.sendRedirect("cadastroCliente.jsp");
 
         } catch (IOException | ServletException erro) {
-
-            // RequestDispatcher despachar = request.getRequestDispatcher("paginaErro.jsp");
-            //     despachar.forward(request, response);
-            throw new RuntimeException("Erro7" + erro);
 
         }
     }

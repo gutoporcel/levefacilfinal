@@ -91,7 +91,7 @@
         
         	<!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
         	<div id="mws-logo-wrap">
-            	<img src="images/mws-logo.png" alt="Leve FÃ¡cil">
+            	<img src="images/mws-logo.png" alt="Leve Fácil">
 			</div>
         </div>
         

@@ -98,7 +98,6 @@
             <div id="mws-navigation">
                 <ul>
                     <li class="active"><a href="dashboardAdmin.jsp"><i class="icon-home"></i> Home</a></li>
-                    <li><a href="propostaAdmin.jsp"><i class="icon-list-2"></i> Propostas</a></li>
                     <li><a href="sac.jsp"><i class="icol32-user"></i>SAC</a></li>
                     
                    

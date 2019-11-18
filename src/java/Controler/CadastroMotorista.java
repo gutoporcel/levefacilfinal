@@ -7,8 +7,6 @@ package Controler;
 
 import dao.MotoristaDAO;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,9 +20,8 @@ import model.MMotorista;
  */
 public class CadastroMotorista extends HttpServlet {
 
-     MotoristaDAO motoristaDao = new MotoristaDAO();
-     private Connection conn;
-    private PreparedStatement stmt;
+   
+   
 
 
     @Override
@@ -32,6 +29,7 @@ public class CadastroMotorista extends HttpServlet {
             throws ServletException, IOException {
         
         try {
+              MotoristaDAO motoristaDao = new MotoristaDAO();
               MMotorista m = new MMotorista();
            
             m.setNome(request.getParameter("nome"));
@@ -53,7 +51,7 @@ public class CadastroMotorista extends HttpServlet {
             m.setCpf(request.getParameter("cpfm"));
             m.setSenha(request.getParameter("senha"));
             m.setCelular(request.getParameter("celular"));
-            m.setPesquisaCpf(request.getParameter("cpf"));
+          
             
             
             if (request.getParameter("acao").equalsIgnoreCase("cadastrar")) {
@@ -68,49 +66,43 @@ public class CadastroMotorista extends HttpServlet {
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroMotorista.jsp");
                     despachar.forward(request, response);
 
-                } else {
-                    request.setAttribute("mensagemE", "Algo deu errado tente de novo.");
-                    RequestDispatcher despachar = request.getRequestDispatcher("cadastroMotorista.jsp");
-                    despachar.forward(request, response);
-
-                }
+                } 
 
             } else if (request.getParameter("acao").equalsIgnoreCase("verifica")) {
                 
-                if (motoristaDao.verificaCad(m)) {
+                MMotorista m1 = new MMotorista();
+                  m1.setPesquisaCpf(request.getParameter("cpf"));
+                
+                if (motoristaDao.verificaCad(m1)) {
                     request.setAttribute("mensagem", "Você já possui cadastro.");
                     RequestDispatcher despachar = request.getRequestDispatcher("cadastroMotorista.jsp");
                     despachar.forward(request, response);
-                }
+                }else{
                 request.setAttribute("mensagemE", "Você não possui Cadastro.");
                 RequestDispatcher despachar = request.getRequestDispatcher("cadastroMotorista.jsp");
                 despachar.forward(request, response);
-
+                }
                 // response.sendRedirect("index.jsp");*/
             }
-            response.sendRedirect("cadastroMotorista.jsp");
-            
-            
-            
-           
-            
+           // response.sendRedirect("cadastroMotorista.jsp");
             
          } catch (Exception erro) {
-            throw new RuntimeException("Erro7" + erro);
-
+         
        }                                                                                   
 
     }
  
-    
+/*    
         @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {}
-
+*/
     /**
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {return "Short description";}}// </editor-fold>
+    public String getServletInfo() {return "Short description";}
+
+}// </editor-fold>
