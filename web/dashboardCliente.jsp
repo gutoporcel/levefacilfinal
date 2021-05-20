@@ -48,7 +48,7 @@
 <link rel="stylesheet" type="text/css" href="css/mws-theme.css" media="screen">
 <link rel="stylesheet" type="text/css" href="css/themer.css" media="screen">
 
-<title>Leve Fácil - Dashboard</title>
+<title>Leve Fï¿½cil - Dashboard</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
 
@@ -149,18 +149,18 @@
             function callback(response, status) {
                 //Verificar o Status
                 if (status !== google.maps.DistanceMatrixStatus.OK)
-                    //Se o status não for "OK"
+                    //Se o status nï¿½o for "OK"
                     $('#litResultado').html(status);
                 else {
                     //Se o status for OK
-                    //Endereço de origem = response.originAddresses
-                    //Endereço de destino = response.destinationAddresses
-                    //Distância = response.rows[0].elements[0].distance.text
-                    //Duração = response.rows[0].elements[0].duration.text
+                    //Endereï¿½o de origem = response.originAddresses
+                    //Endereï¿½o de destino = response.destinationAddresses
+                    //Distï¿½ncia = response.rows[0].elements[0].distance.text
+                    //Duraï¿½ï¿½o = response.rows[0].elements[0].duration.text
                     $('#litResultado').html("<strong>Origem</strong>: " +   response.destinationAddresses+
                         "<br /><strong>Destino:</strong> " +  response.originAddresses +
-                        "<br /><strong>Distância</strong>: " + response.rows[0].elements[0].distance.text +
-                        " <br /><strong>Duração</strong>: " + response.rows[0].elements[0].duration.text
+                        "<br /><strong>Distï¿½ncia</strong>: " + response.rows[0].elements[0].distance.text +
+                        " <br /><strong>Duraï¿½ï¿½o</strong>: " + response.rows[0].elements[0].duration.text
                         
                         
                        
@@ -271,7 +271,7 @@
                     <div id="mws-username">
                         
                       
-                        Olá, <%= usuario %>
+                        Olï¿½, <%= usuario %>
                     </div>
                     <ul>                    	
                         <li><a href="alterarSenhaCliente.jsp">Mudar Senha</a></li>
@@ -304,9 +304,9 @@
                     <li class="active"><a href="dashboardCliente.jsp"><i class="icon-home"></i> Home</a></li>
                     <li><a href="dadosCliente.jsp"><i class="icon-list-2"></i> Perfil</a></li>
                     
-                    <li><a href="listaCartoesCliente.jsp"><i class="icon-business-card"></i>Cartões</a></li>
-                <li><a href="listaTransacoesCliente.jsp"><i class="icon-briefcase"></i>Histórico</a></li>
-                   <li><a href="listaSolicitacoesCliente.jsp"><i class="icon-check"></i>Solicitações</a></li>
+                    <li><a href="listaCartoesCliente.jsp"><i class="icon-business-card"></i>Cartï¿½es</a></li>
+                <li><a href="listaTransacoesCliente.jsp"><i class="icon-briefcase"></i>Histï¿½rico</a></li>
+                   <li><a href="listaSolicitacoesCliente.jsp"><i class="icon-check"></i>Solicitaï¿½ï¿½es</a></li>
                     <li><a href="gerenciarPagamentoCliente.jsp"><i class="icon-lock"></i>Pagamentos</a></li>
                     <li><a href="sac.jsp"><i class="icol32-user"></i>SAC </a></li>
                    
@@ -326,7 +326,7 @@
                 <div class="mws-panel grid_8">
                   
                     <div class="mws-panel-header">
-                        <span>Realização do Pedido</span>                         
+                        <span>Realizaï¿½ï¿½o do Pedido</span>                         
                     </div> 
                    <div class="mws-panel-body  " id="map_content" ></div>
                    <div class="mws-panel-toolbar"><span id="litResultado">&nbsp;</span></div>
@@ -374,7 +374,7 @@
                                        
                                         <label for="route_from" class="mws-form-label">Local de Partida:</label>
                                         <div class="mws-form-item">
-                                            <input type="text"id="route_from" name="partida" placeholder="Digite o endereço com o  numero, CPF  ou nome do lugar   ">
+                                            <input type="text"id="route_from" name="partida" placeholder="Digite o endereï¿½o com o  numero, CPF  ou nome do lugar   ">
                                         </div>
                                     </div>
                                 </div>
@@ -387,7 +387,7 @@
                                     <div class="mws-form-col-8-8">
                                         <label for="route_des" class="mws-form-label">Destino:</label>
                                         <div class="mws-form-item">
-                                            <input name="destino" type="text" id="route_des" onchange="CalculaDistancia()" placeholder="Digite o endereço com o  numero, CPF  ou nome do lugar   " >
+                                            <input name="destino" type="text" id="route_des" onchange="CalculaDistancia()" placeholder="Digite o endereï¿½o com o  numero, CPF  ou nome do lugar   " >
                                         </div>
                                     </div>
                                 </div>
@@ -395,7 +395,7 @@
                             <div><span id="litResultado">&nbsp;</span></div>
                             
                             
-                           <!-- <button class="btn" id="calcuarDistancia "type="submit" value="Traçar rota"  onclick="CalculaDistancia()" />Traçar rota</button>
+                           <!-- <button class="btn" id="calcuarDistancia "type="submit" value="Traï¿½ar rota"  onclick="CalculaDistancia()" />Traï¿½ar rota</button>
                             -->
                              
                              
@@ -404,7 +404,7 @@
                             <div class="mws-form-row">
                                 <div class="mws-form-cols">
                                     <div class="mws-form-col-2-8">
-                                        <label class="mws-form-label">Distância:</label>
+                                        <label class="mws-form-label">Distï¿½ncia:</label>
                                         <div class="mws-form-item">
                                             <input type="text" id="distancia" name="distancia"readonly> 
                                         </div>
@@ -444,9 +444,9 @@
                             <div class="mws-form-row">
                                 <div class="mws-form-cols">
                                     <div class="mws-form-col-8-8">
-                                        <label class="mws-form-label">Descrição da Carga:</label>
+                                        <label class="mws-form-label">Descriï¿½ï¿½o da Carga:</label>
                                         <div class="mws-form-item">
-                                            <textarea name="descricao" class="big"  type="text"  placeholder="Digite as caracteristicas do produto. Ex: nome, peso, dimensões"></textarea>
+                                            <textarea name="descricao" class="big"  type="text"  placeholder="Digite as caracteristicas do produto. Ex: nome, peso, dimensï¿½es"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -472,7 +472,7 @@
 	
             <!-- Footer -->
             <div id="mws-footer">
-               Sistema desenvolvido por José Augusto Porcel Stacio - Grupo 3 - Leve Fácil © 2019
+               Sistema desenvolvido por Josï¿½ Augusto Porcel Stacio - Grupo 3 - Leve Fï¿½cil ï¿½ 2019
             </div>
 
         </div>
