@@ -57,8 +57,10 @@
       #map_content { height: 100% ;height: 400px}
     </style>
 
+<!--chave maps-->
+ <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=" >
+   
 
- <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBGGlIaXJtgA-J5hZtlAtM21q6OxWqrds" >
 </script>
 <script type="text/javascript" src="jqu/jquery.min.js"></script>
 
